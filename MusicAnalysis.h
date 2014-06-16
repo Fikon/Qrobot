@@ -3,27 +3,27 @@
 
 #include <cstdio>
 #include <fftw3.h>
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include "onsetsds.h"
 
 class MusicAnalysis{
 public:
 	MusicAnalysis();            
 	~MusicAnalysis();
-	/**读取pcm数据，用fft处理*/
+	/**用fft处理pcm数据*/
 	void pcmAnalysis();
 	/**对fft处理的结果进行处理，得到onsets*/
 	void onsetsAnalysis();
 	/**get,set函数*/
-    void setPcmData();  //参数格式再说，等老蒋
+    void setPcmData(unsigned char * data, int samples, int sampleRate, int channels);
 private:
-	int beats;
 	int channels;
 	int sampleRate;
-	int frames;
-	int format;
-	int sectios;
-	int seekable;
-	fftw_complex * pcmData;
-	fftw_complex * fftData;
+	int samples;   
+	float * pcmData;
+	float * fftData;
 };
 
 #endif
