@@ -48,7 +48,7 @@ AudioController::AudioController(char * deviceName,int _frames,int _hz,int mode)
    snd_pcm_hw_params_set_format(handle,params,SND_PCM_FORMAT_S16_LE);
    
    //!set two channels
-   snd_pcm_hw_params_set_channels(handle,params,2);
+   snd_pcm_hw_params_set_channels(handle,params,1);
 
    //!set the samples' rate
    snd_pcm_hw_params_set_rate_near(handle,params,&hz,&ret);
