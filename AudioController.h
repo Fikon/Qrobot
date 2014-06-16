@@ -24,14 +24,14 @@ private:
       //!音频设备的参数数据结构
       snd_pcm_hw_params_t *params;
       
-      //!输入输出的音频的帧大小
+      //!一个 period读入的帧数量
       snd_pcm_uframes_t frames;
       
       //!输入输出音频的频率
       unsigned int hz;
       
       //!用于输入输出的数组
-      char *buffer;
+      short *buffer;
       
 public:
       //!构造函数

@@ -68,7 +68,7 @@ AudioController::AudioController(char * deviceName,int _frames,int _hz,int mode)
    //!user a buffer large enough to hold one period
    snd_pcm_hw_params_get_period_size(params,&frames,&ret);
    
-   buffer=(char *)malloc(frames*4);
+   buffer=(short *)malloc(frames*2);
 }
 
 //录音
