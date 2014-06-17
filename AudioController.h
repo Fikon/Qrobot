@@ -73,7 +73,7 @@ public:
        *
        *retval -1 error
        *retval 0 success
-       *retval 1 overrun 表示处理buffer缓存区不够快而被心的数据覆盖了
+       *retval 1 overrun 表示处理buffer缓存区不够快而被新的数据覆盖了
        *retval 2 shortread 表示buffer缓存区未读满
        */
       int audioReadIn();

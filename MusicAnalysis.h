@@ -6,7 +6,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include "onsetsds.h"
+#include "./onsetsds.h"
 
 class MusicAnalysis{
 public:
@@ -15,15 +15,18 @@ public:
 	/**用fft处理pcm数据*/
 	void pcmAnalysis();
 	/**对fft处理的结果进行处理，得到onsets*/
+	void onsetsInit();
 	void onsetsAnalysis();
 	/**get,set函数*/
-    void setPcmData(unsigned char * data, int samples, int sampleRate, int channels);
+    void setPcmData(short * data, int samples, int sampleRate, int channels);
 private:
 	int channels;
 	int sampleRate;
 	int samples;   
 	float * pcmData;
 	float * fftData;
+	OnsetsDS * ods;
+	float * odsdata;
 };
 
 #endif
