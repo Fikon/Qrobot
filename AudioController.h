@@ -90,5 +90,11 @@ public:
        *
        */
       int audioWriteOut();
+ 
+      //!buffer 的getter函数
+      short * getBuffer()
+      {
+          return buffer;
+      }
 };
 #endif
