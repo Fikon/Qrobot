@@ -27,21 +27,20 @@ MusicAnalysis::~MusicAnalysis(){
 
 	free(ods);
 	free(odsdata);
-	fftw_free(pcmIn);
-	fftw_free(fftData);
-	fftw_destroy_plan(plan);
+	fftwf_free(pcmIn);
+	fftwf_free(fftData);
 }
 
 void MusicAnalysis::pcmAnalysisInit(){
-	pcmIn = (float *)fftw_malloc(sizeof(float) * samples);
-	fftData = (float *)fftw_malloc(sizeof(float) * samples);
-	memset(fftData, 0, samples);
+	pcmIn = (float *)fftwf_malloc(sizeof(float) * samples);
+	fftData = (float *)fftwf_malloc(sizeof(float) * samples);
+	memset(fftData, 0.0, samples);
 	//plan = fftw_plan_r2r_1d(samples, (double*)pcmIn, (double*)fftData, FFTW_R2HC, FFTW_ESTIMATE);
 }
 
 void MusicAnalysis::pcmAnalysis(){
 //	float * in = NULL;
-//	fftw_plan plan;
+	fftwf_plan plan;
 //	int _count;
 
 //	_count = samples;
@@ -52,16 +51,31 @@ void MusicAnalysis::pcmAnalysis(){
 //	if ( fftData == NULL ){
 //		fftData = (float *)fftw_malloc(sizeof(float) * _count + 1);
 //	}
-	plan = fftw_plan_r2r_1d(samples, (double*)pcmIn, (double*)fftData, FFTW_R2HC, FFTW_ESTIMATE);
+
+	for ( int i = 0 ; i < samples ; i ++ ){
+		pcmIn[i] = pcmData[i];
+	}
+
+	memset(fftData, 0.0, samples);
+
+	plan = fftwf_plan_r2r_1d(samples, pcmIn, fftData, FFTW_R2HC, FFTW_ESTIMATE);
 //	plan = fftw_plan_r2r_1d(_count, (double*)in, (double*)fftData, FFTW_R2HC, FFTW_ESTIMATE);
 
-	memset(fftData, 0, samples);
 	for(int i = 0; i < samples; i++){
 		pcmIn[i] = pcmData[i];
 	}
 	
-	fftw_execute(plan);
-	fftw_destroy_plan(plan);
+	memset(fftData, 0.0, samples);
+	/*for ( int i = 0 ; i < samples ; i ++ ){
+		printf("%f\n", pcmIn[i]);
+	}*/
+
+	fftwf_execute(plan);
+/*	printf("fftData********************************************\n");
+	for (int i = 0 ; i < samples ; i ++ ){
+		printf("%f\n", fftData[i]);
+	}*/
+	fftwf_destroy_plan(plan);
 }
 
 void MusicAnalysis::onsetsInit(){
@@ -71,6 +85,9 @@ void MusicAnalysis::onsetsInit(){
 }
 
 bool MusicAnalysis::onsetsAnalysis(){
+	/*for ( int i = 0 ; i < samples ; i ++ ){
+		printf("fftData[%d] : %f\n", i, fftData[i]);
+	}*/
 	return onsetsds_process(ods, fftData);
 }
 

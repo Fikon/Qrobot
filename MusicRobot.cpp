@@ -8,10 +8,11 @@
 #include "MusicAnalysis.h"
 #include <time.h>
 
-#define AUDIO_NAME "default"			//QRobot设备id
+#define AUDIO_NAME "hw:2,0"			//QRobot设备名称
 #define FRAME_NUM 512               //帧的数量
 #define SAMPLE_RATE 44100           //采样率
 #define CHANNELS 2                  //声道数
+#define ONSETS_NUM 150               //当不是onsets的数量达到该数值时做动作
 
 const int THREAD_NUM = 2;           //线程数
 
@@ -19,6 +20,12 @@ AudioController * audioController;  //音频输入输出对象
 MusicAnalysis * musicAnalysis;      //音乐处理对象
 bool audioBufferOver;               //标记录音缓存块是否已充满新数据
 
+int onsetsCount;                    //标记onsets个数
+
+/**做动作*/
+void movement(){
+	printf("Y\n");
+}
 
 /**线程0为录音线程，线程1为音乐处理线程*/
 void * threadRun( void *threadId ){
@@ -36,20 +43,28 @@ void * threadRun( void *threadId ){
 				}
 			}
 		}
-		printf("线程0结束\n");
 	}else{
 		musicAnalysis = new MusicAnalysis(CHANNELS, SAMPLE_RATE, FRAME_NUM );
 		(*musicAnalysis).onsetsInit();
 		(*musicAnalysis).pcmAnalysisInit();
+		onsetsCount = 0;
 		while ( true ){
 			if ( audioBufferOver ){
 				(*musicAnalysis).setPcmData( (*audioController).getBuffer());
 				audioBufferOver = false;                                       //重置标识符,录音部分继续录音
 				(*musicAnalysis).pcmAnalysis();
 				if ( (*musicAnalysis).onsetsAnalysis() ){                      //有重音
-					printf("Y\n");
+					onsetsCount = 0;
+					//printf("Y\n");
+
 				}else{
-					printf("N\n");
+					onsetsCount ++;
+					//printf("N\n");
+				}
+				//printf("%d\n", onsetsCount);
+				if ( onsetsCount == ONSETS_NUM ){
+					movement();
+					onsetsCount = 0;
 				}
 			}
 		}

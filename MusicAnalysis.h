@@ -31,7 +31,6 @@ private:
 	OnsetsDS * ods;
 	float * odsdata;
 	float * pcmIn;
-	fftw_plan plan;
+	//fftw_plan plan;
 };
-
 #endif
