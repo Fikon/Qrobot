@@ -58,6 +58,8 @@ const int HEAD_TOUCH=10;
 
 const int POWER=11;
 
+const unsigned int TIME_OUT=0;
+
 //!定义与usb交互的字节数组
 unsigned char resetBuffer[25]={0xF7, 0xF7,0x00 ,0x14 ,0x00 ,0x0F ,0x0F ,0x2B ,0x90 ,0x2E ,0x80 ,0x4E ,0x00 ,0x4E ,0x00 ,0x00 ,0x00 ,0xFF ,0xF0 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x0E};
 
@@ -103,7 +105,7 @@ bool QRobotController::reset()
    cout<<"reset the robot..."<<endl;
    int ret=0;
    ret=libusb_interrupt_transfer(command_device_handle,1,resetBuffer,
-            25,&transferred,1000);
+            25,&transferred,TIME_OUT);
    
    if(ret==0)
       return true;
@@ -139,7 +141,7 @@ bool QRobotController::leftWingUp(int speed,int time)
    printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    int retval=0;
-   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
       return true;
    else
@@ -171,7 +173,7 @@ bool QRobotController::leftWingOrg(int speed)
    printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<
    int retval=0;
-   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
       return true;
    else
@@ -209,7 +211,7 @@ bool QRobotController::leftWingDown(int speed,int time)
    printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    int retval=0;
-   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
       return true;
    else
@@ -248,7 +250,7 @@ bool QRobotController::rightWingUp(int speed,int time)
     printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,
-&transferred,1000);
+&transferred,TIME_OUT);
    if(retval==0)
       return true;
    else
@@ -286,7 +288,7 @@ bool QRobotController::rightWingDown(int speed,int time)
    //<<<<<<<<<<<<<<<<<<<<<<<<<<
    printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<
-   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
       return true;
    else
@@ -321,7 +323,7 @@ bool QRobotController::rightWingOrg(int speed)
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+   retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
        return true;
    else
@@ -359,7 +361,7 @@ bool QRobotController::horizontalHead(int speed,int range)
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     printBuff(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
         return true;
     else
@@ -392,7 +394,7 @@ bool QRobotController::horizontalHeadOrg(int speed)
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     printBuff(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,
-    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
        return true;
     else
@@ -431,7 +433,7 @@ bool QRobotController::verticalHead(int speed,int range)
      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
      printBuff(buffer);
      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-     retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+     retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
      if(retval==0)
         return true;
      else
@@ -464,7 +466,7 @@ bool QRobotController::verticalHeadOrg(int speed)
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     printBuff(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
         return true;
     else
@@ -493,7 +495,7 @@ bool QRobotController::setHeartColor(int red,int green,int blue)
     sscanf(convertBuff,"%X",&tmp3);
     buffer[HEART_COLOR2]=tmp3;
     generateAudit(buffer);
-    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
         return true;
     else
@@ -523,7 +525,7 @@ bool QRobotController::setEyePic(int time,int face)
     //,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     printBuff(buffer);
     //，，，，，，，，，，，，，，，，，
-    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,1000);
+    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
         return true;
     else
