@@ -1,1 +1,1 @@
-g++ -o MusicRobot MusicRobot.cpp AudioController.cpp MusicAnalysis.cpp onsetsds.c -include AudioController.h MusicAnalysis.h onsetsds.h -lsndfile -lfftw3f -lasound
+g++ -o MusicRobot MusicRobot.cpp AudioController.cpp MusicAnalysis.cpp onsetsds.c QRobotController.cpp QRobotAction.cpp -include AudioController.h MusicAnalysis.h onsetsds.h QRobotController.h QRobotAction.h -lsndfile -lfftw3f -lasound -lusb-1.0

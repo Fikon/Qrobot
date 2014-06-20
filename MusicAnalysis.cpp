@@ -80,8 +80,8 @@ void MusicAnalysis::pcmAnalysis(){
 
 void MusicAnalysis::onsetsInit(){
 	ods = (OnsetsDS *)malloc(sizeof(OnsetsDS));
-	odsdata = (float*)malloc(onsetsds_memneeded(ODS_ODF_POWER, samples, 11));
-	onsetsds_init( ods, odsdata, ODS_FFT_FFTW3_HC, ODS_ODF_POWER, samples, 11,sampleRate);
+	odsdata = (float*)malloc(onsetsds_memneeded(ODS_ODF_RCOMPLEX, samples, 11));
+	onsetsds_init( ods, odsdata, ODS_FFT_FFTW3_HC, ODS_ODF_RCOMPLEX, samples, 11,sampleRate);
 }
 
 bool MusicAnalysis::onsetsAnalysis(){

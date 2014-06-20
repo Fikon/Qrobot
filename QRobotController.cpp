@@ -102,7 +102,7 @@ QRobotController::QRobotController()
 //!reset the robot~
 bool QRobotController::reset()
 {
-   cout<<"reset the robot..."<<endl;
+   //cout<<"reset the robot..."<<endl;
    int ret=0;
    ret=libusb_interrupt_transfer(command_device_handle,1,resetBuffer,
             25,&transferred,TIME_OUT);
@@ -116,7 +116,7 @@ bool QRobotController::reset()
 //!make the left wing up move!!~
 bool QRobotController::leftWingUp(int speed,int time)
 {
-   cout<<"left wing up moving!!~"<<endl;
+   //cout<<"left wing up moving!!~"<<endl;
    unsigned char buffer[25];
    //!两个临时变量，用于将输入的十进制转化为十六进制数据
    char convertBuff[20];
@@ -138,7 +138,7 @@ bool QRobotController::leftWingUp(int speed,int time)
    buffer[LWING_TIME]=tmp;
    generateAudit(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   printBuff(buffer);
+   //printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    int retval=0;
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
@@ -154,7 +154,7 @@ bool QRobotController::leftWingUp(int speed,int time)
 //!make the left wing reset!!~
 bool QRobotController::leftWingOrg(int speed)
 {
-   cout<<"left wing reset!!~"<<endl;
+   //cout<<"left wing reset!!~"<<endl;
    unsigned char buffer[25];
    generateBuffer(buffer);
    switch(speed)
@@ -170,7 +170,7 @@ bool QRobotController::leftWingOrg(int speed)
    }
    generateAudit(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<
-   printBuff(buffer);
+   //printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<
    int retval=0;
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
@@ -186,7 +186,7 @@ bool QRobotController::leftWingOrg(int speed)
 //!make the left wing down!!~
 bool QRobotController::leftWingDown(int speed,int time)
 {
-   cout<<"left wing move down!!~"<<endl;
+   //cout<<"left wing move down!!~"<<endl;
    unsigned char buffer[25];
    //!两个临时变量用于将十进制数据转化为十六进制
    char convertBuff[20];
@@ -208,7 +208,7 @@ bool QRobotController::leftWingDown(int speed,int time)
    buffer[LWING_TIME]=tmp;
    generateAudit(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   printBuff(buffer);
+   //printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    int retval=0;
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
@@ -224,7 +224,7 @@ bool QRobotController::leftWingDown(int speed,int time)
 //make the right wing up move!!~
 bool QRobotController::rightWingUp(int speed,int time)
 {
-   cout<<"right wing up move!!~"<<endl;
+   //cout<<"right wing up move!!~"<<endl;
    unsigned char buffer[25];
    generateBuffer(buffer);
    //!临时变量
@@ -247,7 +247,7 @@ bool QRobotController::rightWingUp(int speed,int time)
    buffer[RWING_TIME]=tmp;
    generateAudit(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    printBuff(buffer);
+    //printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,
 &transferred,TIME_OUT);
@@ -263,7 +263,7 @@ bool QRobotController::rightWingUp(int speed,int time)
 //!make the right wing down move!!~
 bool QRobotController::rightWingDown(int speed,int time)
 {
-   cout<<"right wing move down!!~"<<endl;
+   //cout<<"right wing move down!!~"<<endl;
    unsigned char buffer[25];
    generateBuffer(buffer);
    //!临时变量
@@ -286,7 +286,7 @@ bool QRobotController::rightWingDown(int speed,int time)
    buffer[RWING_TIME]=tmp;
    generateAudit(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<
-   printBuff(buffer);
+   //printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
@@ -301,7 +301,7 @@ bool QRobotController::rightWingDown(int speed,int time)
 //!make the right wing reset!!~
 bool QRobotController::rightWingOrg(int speed)
 {
-   cout<<"right wing reset!!~"<<endl;
+   //cout<<"right wing reset!!~"<<endl;
    unsigned char buffer[25];
    generateBuffer(buffer);
    //!临时变量
@@ -321,7 +321,7 @@ bool QRobotController::rightWingOrg(int speed)
    }
    generateAudit(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   printBuff(buffer);
+   //printBuff(buffer);
    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
    retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
    if(retval==0)
@@ -336,7 +336,7 @@ bool QRobotController::rightWingOrg(int speed)
 //!make the head move horizontally!!~
 bool QRobotController::horizontalHead(int speed,int range)
 {
-    cout<<"head move horizontally!!~"<<endl;
+    //cout<<"head move horizontally!!~"<<endl;
     unsigned char buffer[25];
     generateBuffer(buffer);
     //!临时变量
@@ -359,7 +359,7 @@ bool QRobotController::horizontalHead(int speed,int range)
     buffer[HEAD_HORIZONTAL_RANGE]=(0x30+tmp);
     generateAudit(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    printBuff(buffer);
+    //printBuff(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
@@ -374,7 +374,7 @@ bool QRobotController::horizontalHead(int speed,int range)
 //!make the head reset horizontally!!~
 bool QRobotController::horizontalHeadOrg(int speed)
 {
-   cout<<"head reset horizontally!!~"<<endl;
+   //cout<<"head reset horizontally!!~"<<endl;
    unsigned char buffer[25];
    generateBuffer(buffer);
    int retval;
@@ -392,7 +392,7 @@ bool QRobotController::horizontalHeadOrg(int speed)
     buffer[HEAD_HORIZONTAL_RANGE]=0x80;
     generateAudit(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    printBuff(buffer);
+    //printBuff(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,
     retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
@@ -407,7 +407,7 @@ bool QRobotController::horizontalHeadOrg(int speed)
 //!make the head move vertically!!~
 bool QRobotController::verticalHead(int speed,int range)
 {
-    cout<<"head move vertically!!~"<<endl;
+    //cout<<"head move vertically!!~"<<endl;
     unsigned char buffer[25];
     generateBuffer(buffer);
     //!临时变量
@@ -431,7 +431,7 @@ bool QRobotController::verticalHead(int speed,int range)
      buffer[HEAD_VERTICAL_RANGE]=(0x90-tmp);
      generateAudit(buffer);
      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-     printBuff(buffer);
+     //printBuff(buffer);
      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
      retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
      if(retval==0)
@@ -446,7 +446,7 @@ bool QRobotController::verticalHead(int speed,int range)
 //!make the head reset vertically!!~
 bool QRobotController::verticalHeadOrg(int speed)
 {
-    cout<<"head reset vertically!!~"<<endl;
+    //cout<<"head reset vertically!!~"<<endl;
     unsigned char buffer[25];
     generateBuffer(buffer);
     int retval;
@@ -464,7 +464,7 @@ bool QRobotController::verticalHeadOrg(int speed)
     buffer[HEAD_VERTICAL_RANGE]=0x7C;
     generateAudit(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    printBuff(buffer);
+    //printBuff(buffer);
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)
@@ -479,7 +479,7 @@ bool QRobotController::verticalHeadOrg(int speed)
 //!set the heart's color!!~
 bool QRobotController::setHeartColor(int red,int green,int blue)
 {
-    cout<<"set heart's color"<<endl;
+    //cout<<"set heart's color"<<endl;
     unsigned char buffer[25];
     generateBuffer(buffer);
     //!临时变量
@@ -508,7 +508,7 @@ bool QRobotController::setHeartColor(int red,int green,int blue)
 //!set the eye's the picture!!~
 bool QRobotController::setEyePic(int time,int face)
 {
-    cout<<"set the eye's picture!!~"<<endl;
+    //cout<<"set the eye's picture!!~"<<endl;
     unsigned char buffer[25];
     generateBuffer(buffer);
     //!临时变量
@@ -523,7 +523,7 @@ bool QRobotController::setEyePic(int time,int face)
     buffer[EYE_SHOW_TIME]=tmp2;
     generateAudit(buffer);
     //,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-    printBuff(buffer);
+    //printBuff(buffer);
     //，，，，，，，，，，，，，，，，，
     retval=libusb_bulk_transfer(command_device_handle,1,buffer,25,&transferred,TIME_OUT);
     if(retval==0)

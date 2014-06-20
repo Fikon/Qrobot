@@ -1,1 +1,0 @@
-g++ -o MusicRobot MusicRobot.cpp AudioController.cpp MusicAnalysis.cpp onsetsds.c -include AudioController.h MusicAnalysis.h onsetsds.h -lsndfile -lfftw3 -lasound
