@@ -1,0 +1,5 @@
+1.msp_cmn.h, msp_types.h, msp_errors.h, qisr.h, qtts.h是讯飞语音的头文件
+2.编译前把libmsc.so复制到/usr/lib，具体做法是到libmsc.so所在文件夹，sudo cp libmsc.so /usr/lib
+3.main.cpp是测试函数
+4./wav文件夹是存放录音的地方，讯飞语音对语音的要求如下：采样率16K或8KHz，采样位是16位，单声道，格式是PCM或WAV。可以用Audacity进行录音测试，这个软件可以调那些参数
+
