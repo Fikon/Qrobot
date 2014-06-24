@@ -14,6 +14,7 @@
 
 #include <alsa/asoundlib.h>
 #include <string>
+#include <string.h>
 
 class AudioController
 {
@@ -96,5 +97,20 @@ public:
       {
           return buffer;
       }
+
+      //!convert the pcm-file to the wav-file
+      /*
+       *param fileName the name of the file for storing wav file
+       *param time the time of reading in audios!!~
+       *
+       */ 
+      void pcmToWav(char * fileName,int time);
+      
+      //!hz 的getter 函数
+      unsigned int getRate()
+      {
+          return hz;
+      }
 };
+
 #endif
