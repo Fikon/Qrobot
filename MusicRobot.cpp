@@ -10,25 +10,25 @@
 #include "QRobotController.h"
 #include "QRobotAction.h"
 
-#define AUDIO_NAME "hw:2,0"			  //QRobot设备名称
-#define FRAME_NUM 64		          //帧的数量
-#define SAMPLE_RATE 44100             //采样率
-#define CHANNELS 2                    //声道数
-#define ONSETS_NUM 16                 //当不是onsets的数量达到该数值时做动作
+#define AUDIO_NAME "hw:2,0"			                         //QRobot设备名称
+#define FRAME_NUM 64		                                 //帧的数量
+#define SAMPLE_RATE 44100                                    //采样率
+#define CHANNELS 2                                           //声道数
+#define ONSETS_NUM 16                                        //当不是onsets的数量达到该数值时做动作
 
-const int THREAD_NUM = 3;             //线程数
+const int THREAD_NUM = 3;                                    //线程数
 pthread_mutex_t mutex0 = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond0 = PTHREAD_COND_INITIALIZER;
 pthread_cond_t cond1 = PTHREAD_COND_INITIALIZER;
-AudioController * audioController;    //音频输入输出对象
-MusicAnalysis * musicAnalysis;        //音乐处理对象
-QRobotController * qRobotController;  //机器人动作对象
-QRobotAction * qRobotAction;
-bool audioBufferOver;                 //标记录音缓存块是否已充满新数据`
-int onsetsCount;                      //标记onsets个数
+AudioController * audioController;                           //音频输入输出对象
+MusicAnalysis * musicAnalysis;                               //音乐处理对象
+QRobotController * qRobotController;                         //机器人控制对象
+QRobotAction * qRobotAction;                                 //机器人动作对象
+bool audioBufferOver;                                        //标记录音缓存块是否已充满新数据`
+int onsetsCount;                                             //标记onsets个数
 clock_t tStart, tEnd;
-int speedInt;                         //音乐速度
+int speedInt;                                                //音乐速度
 
 /**做动作*/
 void wingMovement(){
@@ -163,28 +163,6 @@ int main(){
 	pthread_mutex_destroy(&mutex1);
 	pthread_cond_destroy(&cond0);
 	pthread_cond_destroy(&cond1);
-
-
-	/*
-	   musicAnalysis = new MusicAnalysis(CHANNELS, SAMPLE_RATE, FRAME_NUM );
-	   (*musicAnalysis).onsetsInit();
-	   (*musicAnalysis).pcmAnalysisInit();
-	   short * data = new short[FRAME_NUM*2];
-	   srand((int)time(0));
-	   for ( int i = 0 ; i < FRAME_NUM*2 ; i ++ ){
-	   data[i] = (short)rand() % 10;
-	   }
-	   for (int i = 0 ; i < 50 ; i ++ ){
-	   (*musicAnalysis).setPcmData( data);
-	   (*musicAnalysis).pcmAnalysis();
-	   printf("%d : ", i);
-	   if ( (*musicAnalysis).onsetsAnalysis() ){                      //有重音
-	   printf("Y\n");
-	   }else{
-	   printf("N\n");
-	   }
-	   }
-	   */
 
 	return 0;
 }
