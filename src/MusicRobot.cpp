@@ -3,11 +3,11 @@
  **/
 
 #include <cstdio>
-#include "QRobotController.h"
+#include "../include/QRobotController.h"
 #include <pthread.h>
-#include "MusicAnalysis.h"
+#include "../include/MusicAnalysis.h"
 #include <time.h>
-#include "QRobotController.h"
+#include "../include/QRobotController.h"
 #include "QRobotAction.h"
 
 #define AUDIO_NAME "hw:2,0"			                         //QRobot设备名称

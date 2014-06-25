@@ -19,7 +19,7 @@
  * $Id: minimad.c,v 1.4 2004/01/23 09:41:32 rob Exp $
  */
 
-# include "MusicPlayer.h"
+# include "../include/MusicPlayer.h"
 
 int playMusic(char * musicName)
 {

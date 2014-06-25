@@ -1,6 +1,6 @@
-#include "MusicAnalysis.h"
+#include "../include/MusicAnalysis.h"
 #include <fftw3.h>
-#include "onsetsds.h"
+#include "../include/onsetsds.h"
 
 MusicAnalysis::MusicAnalysis(){
 	pcmData = NULL;
