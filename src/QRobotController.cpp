@@ -8,7 +8,7 @@
  *
  */
 
-#include "QRobotController.h"
+#include "../include/QRobotController.h"
 #include <iostream>
 
 using namespace std;

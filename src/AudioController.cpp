@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <stdio.h>
-#include "AudioController.h"
+#include "../include/AudioController.h"
 #include <fstream>
 
 using namespace std;
