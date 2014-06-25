@@ -1,1 +1,0 @@
-g++ -o MusicRobot ./src/MusicRobot.cpp ./src/AudioController.cpp ./src/MusicAnalysis.cpp ./src/onsetsds.c ./src/QRobotController.cpp ./src/QRobotAction.cpp -include ./include/AudioController.h ./include/MusicAnalysis.h ./include/onsetsds.h ./include/QRobotController.h ./include/QRobotAction.h -lsndfile -lfftw3f -lasound -lusb-1.0

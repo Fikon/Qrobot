@@ -8,7 +8,9 @@
 #include "../include/MusicAnalysis.h"
 #include <time.h>
 #include "../include/QRobotController.h"
-#include "QRobotAction.h"
+#include "../include/QRobotAction.h"
+#include "../include/MusicPlayer.h"
+//#include "../include/voiceTransform"
 
 #define AUDIO_NAME "hw:2,0"			                         //QRobot设备名称
 #define FRAME_NUM 64		                                 //帧的数量
@@ -16,19 +18,23 @@
 #define CHANNELS 2                                           //声道数
 #define ONSETS_NUM 16                                        //当不是onsets的数量达到该数值时做动作
 
-const int THREAD_NUM = 3;                                    //线程数
+const int THREAD_NUM = 4;                                    //线程数
 pthread_mutex_t mutex0 = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t mutex2 = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond0 = PTHREAD_COND_INITIALIZER;
 pthread_cond_t cond1 = PTHREAD_COND_INITIALIZER;
+pthread_cond_t cond2 = PTHREAD_COND_INITIALIZER;
 AudioController * audioController;                           //音频输入输出对象
 MusicAnalysis * musicAnalysis;                               //音乐处理对象
 QRobotController * qRobotController;                         //机器人控制对象
 QRobotAction * qRobotAction;                                 //机器人动作对象
+MusicPlayer * musicPlayer;                                   //音乐播放类
 bool audioBufferOver;                                        //标记录音缓存块是否已充满新数据`
 int onsetsCount;                                             //标记onsets个数
 clock_t tStart, tEnd;
 int speedInt;                                                //音乐速度
+bool isOutMusicPlay;                                         //标记是否是外部播放音乐
 
 /**做动作*/
 void wingMovement(){
@@ -94,10 +100,13 @@ void * threadRun( void *threadId ){
 		int pastCount = 0;                                                     //当出现重音时，略过的采样
 		tStart = clock();
 		while ( true ){
-
 			if ( audioBufferOver ){
-				(*musicAnalysis).setPcmData( (*audioController).getBuffer());
-				audioBufferOver = false;                                       //重置标识符,录音部分继续录音
+				if ( isOutMusicPlay ){
+					(*musicAnalysis).setPcmData( (*audioController).getBuffer());
+					audioBufferOver = false;                                       //重置标识符,录音部分继续录音
+				}else{
+					(*musicAnalysis).setPcmData( (*musicPlayer).getPcmBuffer());		
+				}
 				(*musicAnalysis).pcmAnalysis();
 				if ( (*musicAnalysis).onsetsAnalysis() ){                      //有重音
 					onsetsCount = 0;
@@ -111,7 +120,8 @@ void * threadRun( void *threadId ){
 				if ( onsetsCount == ONSETS_NUM && pastCount <= 0 ){
 					tEnd = clock();
 					printf("%d\n", tEnd-tStart);
-					setSpeed((int)(tEnd-tStart));
+					//setSpeed((int)(tEnd-tStart));
+					setSpeed(1700000);
 					qRobotAction->dance();
 					tStart = clock();
 					onsetsCount = 0;
@@ -122,12 +132,22 @@ void * threadRun( void *threadId ){
 		}
 		printf("线程1结束\n");
 	}else if( tId == 2 ){
+		pthread_mutex_lock(&mutex2);
+		pthread_cond_wait(&cond2,&mutex2);
+		pthread_mutex_unlock(&mutex2);
+		printf("请说话\n");
+		/*************测试*****************/
+		musicPlayer->pcmBufferInit(FRAME_NUM);
+		musicPlayer->playMusic("./test3.mp3",AUDIO_NAME);
+		/**********************************/
+		printf("线程3结束\n");
+	}else if( tId == 3 ){
 		bool isOpen = false;                                                    //标记机器人是否是开启状态
 		while ( true ){
 			int touchInfo = (*qRobotController).getTouchInfo();
-			if ( !isOpen && touchInfo == 0x02 ){
-				printf("启动...\n");
+			if ( !isOpen && touchInfo == 0x02 ){                                //听音乐舞蹈
 				isOpen = true;
+				isOutMusicPlay = true;
 				pthread_cond_signal(&cond0);
 				pthread_cond_signal(&cond1);
 			}else if( touchInfo == 0x12 ){
@@ -135,7 +155,17 @@ void * threadRun( void *threadId ){
 				(*qRobotController).reset();
 				pthread_cancel(0);
 				pthread_cancel(1);
+				pthread_cancel(2);
 				break;
+			}else if( touchInfo == 0x04 ){                                      //点歌
+				isOpen = true;
+				isOutMusicPlay = false;
+				if ( musicPlayer == NULL ){
+					musicPlayer = new MusicPlayer();
+				}
+				audioBufferOver = true;
+				pthread_cond_signal(&cond1);
+				pthread_cond_signal(&cond2);
 			}
 		}
 	}
@@ -144,6 +174,7 @@ void * threadRun( void *threadId ){
 
 int main(){
 
+	isOutMusicPlay = false;
 	audioBufferOver = false;
 	qRobotController = QRobotController::getInstance();
 

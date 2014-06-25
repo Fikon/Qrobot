@@ -4,7 +4,7 @@
  *
  *\author 丁东辉
  */
-#include"../include/QRobotAction.h"
+#include "../include/QRobotAction.h"
 
 QRobotAction::QRobotAction(){
 	controller = QRobotController::getInstance();

@@ -1,7 +1,0 @@
-以下两个是需要传入的参数的值：
-const char *login_configs = "appid = 53a38a05, work_dir =   .  ";
-const char *param = "sub=iat,ssm=1,auf=audio/L16;rate=16000,aue=raw,ent=sms16k,rst=plain,rse=utf8,cfd=900,ptt=0;";
-
-编译的时候需要链接的库函数：
--fPIC -lmsc -ldl -lpthread -lrt
-

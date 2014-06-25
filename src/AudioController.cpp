@@ -148,7 +148,7 @@ void AudioController::pcmToWav(char * fileName,int time)
    times=getRate()/512;
    //!数据流的大小
    size=times*1024;
-　 //!文件的总大小
+   //!文件的总大小
    fileLen=size+48;
    //!采样率
    rate=getRate();
