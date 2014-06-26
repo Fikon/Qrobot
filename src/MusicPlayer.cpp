@@ -41,22 +41,22 @@ void MusicPlayer::pcmBufferInit( int samples ){
 	sampleCount = 0;
 }
 
-short * MusicPlayer::getPcmBuffer(){
-	return pcmBuffer;
-}
+	short * MusicPlayer::getPcmBuffer(){
+		return pcmBuffer;
+	}
 
-int MusicPlayer::playMusic(char * musicName, char * diviceName)
-{
-	this->diviceName = diviceName;
-
-	struct stat stat;
-	void *fdm;
-
-	int fd;
-	fd=open(musicName,O_RDWR);
-	if(fd<0)
+	int MusicPlayer::playMusic(char * musicName, char * diviceName)
 	{
-		perror("open file failed:");
+		this->diviceName = diviceName;
+
+		struct stat stat;
+		void *fdm;
+
+		int fd;
+		fd=open(musicName,O_RDWR);
+		if(fd<0)
+		{
+			perror("open file failed:");
 		return 1;
 	}   
 
