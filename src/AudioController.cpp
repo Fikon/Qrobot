@@ -147,11 +147,12 @@ void AudioController::pcmToWav(char * fileName,int time)
    //!计算出循环的次数
    times=time*getRate()/512;
    //!数据流的大小
-   size=times*1024;
+   size=times*getFrames()*2;
    //!文件的总大小
    fileLen=size+48;
    //!采样率
-   rate=getRate();
+   rate=getRate(); 
+   printf("%d\n", rate);
    //!每秒传输的速率
    bytePerSec=rate*2;
    ofstream out(fileName,ios::binary);
@@ -168,18 +169,22 @@ void AudioController::pcmToWav(char * fileName,int time)
    out.seekp(0,ios::end);
    cout<<out.tellp()<<endl;
    short buf[1024];
-   printf("ok1:%d\n", times);
+   //int _size=getFrames()*2;
+   //buf=(short *)malloc(_size);
+   //cout<<_size<<endl;
    for(int i=0;i<times;i++)
    {
       audioReadIn();
-      for(int j=0;j<1024;j++)
-          buf[j]=getBuffer()[2*j];
+      for(int f=0;f<1024;f++)
+          buf[f]=getBuffer()[2*f];
       out.write((char *) buf,1024);
    }
-   printf("ok2\n");
+   //cout<<"ii"<<endl;
+   //free(buf);
+   //cout<<"free"<<endl;
    out.close();
+  // free(buf);
 }
-
 
 
 

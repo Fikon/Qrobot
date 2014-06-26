@@ -25,6 +25,8 @@ snd_pcm_t * MusicPlayer::handle = NULL;
 short * MusicPlayer::pcmBuffer = NULL;
 int MusicPlayer::sampleNum = 16;
 int MusicPlayer::sampleCount = 0;
+bool MusicPlayer::isPcmBufferFull = false;
+bool MusicPlayer::isPlay = true;
 
 MusicPlayer::MusicPlayer(){
 	handle = NULL;
@@ -41,22 +43,34 @@ void MusicPlayer::pcmBufferInit( int samples ){
 	sampleCount = 0;
 }
 
-	short * MusicPlayer::getPcmBuffer(){
-		return pcmBuffer;
-	}
+short * MusicPlayer::getPcmBuffer(){
+	return pcmBuffer;
+}
 
-	int MusicPlayer::playMusic(char * musicName, char * diviceName)
+bool MusicPlayer::getIsPcmBufferFull(){
+	return isPcmBufferFull;
+}
+
+void MusicPlayer::setIsPcmBufferFull( bool isFull ){
+	isPcmBufferFull = isFull;
+}
+
+void MusicPlayer::setIsPlay( bool isPlay ){
+	this->isPlay = isPlay;
+}
+
+int MusicPlayer::playMusic(char * musicName, char * diviceName)
+{
+	this->diviceName = diviceName;
+
+	struct stat stat;
+	void *fdm;
+
+	int fd;
+	fd=open(musicName,O_RDWR);
+	if(fd<0)
 	{
-		this->diviceName = diviceName;
-
-		struct stat stat;
-		void *fdm;
-
-		int fd;
-		fd=open(musicName,O_RDWR);
-		if(fd<0)
-		{
-			perror("open file failed:");
+		perror("open file failed:");
 		return 1;
 	}   
 
@@ -174,6 +188,10 @@ enum mad_flow MusicPlayer::input(void *data,
 
 	buffer->length = 0;
 
+	if( !isPlay ){
+		return MAD_FLOW_STOP;
+	}
+
 	return MAD_FLOW_CONTINUE;
 }
 
@@ -243,6 +261,7 @@ enum mad_flow MusicPlayer::output(void *data,
 		sampleCount ++;
 		if ( sampleCount == sampleNum ){
 			sampleCount = 0;
+			isPcmBufferFull = true;
 		}
 		//printf("%x\n", sample);
 
@@ -259,7 +278,7 @@ enum mad_flow MusicPlayer::output(void *data,
 
 	OutputPtr = Output; 
 	snd_pcm_writei (handle, OutputPtr, n); 
-	OutputPtr = Output;    
+	OutputPtr = Output;   
 
 	return MAD_FLOW_CONTINUE;
 }
@@ -282,6 +301,7 @@ enum mad_flow MusicPlayer::error(void *data,
 			stream->this_frame - buffer->start);
 
 	/* return MAD_FLOW_BREAK here to stop decoding (and propagate an error) */
+	
 
 	return MAD_FLOW_CONTINUE;
 }

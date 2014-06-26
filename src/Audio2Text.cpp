@@ -1,4 +1,5 @@
 #include "../include/Audio2Text.h"
+#include "../include/AudioController.h"
 
 //!constructor
 Audio2Text::Audio2Text(char *_configs,char *_param)
@@ -139,7 +140,6 @@ char * Audio2Text::findAudio(char *dir,char *name)
    }
    return "傻逼";
 }
-
 
 
 

@@ -111,6 +111,12 @@ public:
       {
           return hz;
       }
+     
+      //!frame 的getter 函数
+      int getFrames()
+      {
+          return frames;
+      }
 };
 
 #endif
