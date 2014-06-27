@@ -72,10 +72,10 @@ public:
        *调用该函数的方法应该是在一个循环当中，每次调用之后应该立即
        *使用buffer中读取的音频数据，防止被下一次输入所覆盖
        *
-       *retval -1 error
-       *retval 0 success
-       *retval 1 overrun 表示处理buffer缓存区不够快而被新的数据覆盖了
-       *retval 2 shortread 表示buffer缓存区未读满
+       *\retval -1 error
+       *\retval 0 success
+       *\retval 1 overrun 表示处理buffer缓存区不够快而被新的数据覆盖了
+       *\retval 2 shortread 表示buffer缓存区未读满
        */
       int audioReadIn();
     
@@ -83,11 +83,11 @@ public:
       /*
        *控制设备播放特定的音频数据
        *
-       *retval -1 error
-       *retval 0 success
-       *retval 1 end of file 在传入的数据是一个文件且已经到了文件末
-       *retval 2 underrun 应用程序写到buffer的速度太慢，导致饿死
-       *retval 3 shortwrite 剩余传输的数据不够一个buffer
+       *\retval -1 error
+       *\retval 0 success
+       *\retval 1 end of file 在传入的数据是一个文件且已经到了文件末
+       *\retval 2 underrun 应用程序写到buffer的速度太慢，导致饿死
+       *\retval 3 shortwrite 剩余传输的数据不够一个buffer
        *
        */
       int audioWriteOut();
@@ -100,8 +100,8 @@ public:
 
       //!convert the pcm-file to the wav-file
       /*
-       *param fileName the name of the file for storing wav file
-       *param time the time of reading in audios!!~
+       *\param fileName the name of the file for storing wav file
+       *\param time the time of reading in audios!!~
        *
        */ 
       void pcmToWav(char * fileName,int time);
