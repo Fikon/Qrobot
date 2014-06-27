@@ -1,12 +1,12 @@
-/*
- *\file Audio2Text.h 
+/*!
+ * \file Audio2Text.h 
  *
- *\brief define the Audio2Text class
+ * \brief define the Audio2Text class
  *
  * Audio2Text is a class has some function which transform the audio
  * file to the plain text
  *
- *\author kiky.jiang@gmail.com
+ * \author kiky.jiang@gmail.com
  *
  */
 
@@ -47,8 +47,8 @@ private:
      }
 public:
      //!constructor method
-     /*
-      *initial the login_configs and param
+     /*!
+      * initial the login_configs and param
       *
       */
      Audio2Text(char * _config,char * _param);
@@ -66,17 +66,17 @@ public:
      }
 
      //!the main function that transform the audio to text
-     /*
-      *\param fileName the input audio file's absolute name
-      *\param text the plain text which tramsform form the audio file
+     /*!
+      * \param fileName the input audio file's absolute name
+      * \param text the plain text which tramsform form the audio file
       *
       */
      void getText(const char * fileName, char *text);
     
      //!find the mucis file in a specific direcotry
-     /*
-      *\param dir the directory to be found
-      *\param name the name of file to be found
+     /*!
+      * \param dir the directory to be found
+      * \param name the name of file to be found
       *
       */
      char * findAudio(char *dir,char *name);
