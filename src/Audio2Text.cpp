@@ -1,11 +1,127 @@
 #include "../include/Audio2Text.h"
 #include "../include/AudioController.h"
 
+//!一个辅助函数，计算匹配相似度
+static int similarRate(const char *str1,const char *str2)
+{
+    int min=strlen(str1)>=strlen(str2)?strlen(str2):strlen(str1);
+    for(int i=0;i<min;i++)
+       if(str1[i]!=str2[i])
+           return i;
+    return min;
+}
+
 //!constructor
 Audio2Text::Audio2Text(char *_configs,char *_param)
 {
    login_configs=_configs;
    param=_param;
+   token="24.691f5d653750a42f11c89608fbf17cb3.2592000.1406565669.282335-3021490";
+   cuid="13580445201";
+   api_key="mS7270GzUlhdGkXhxr9M5En8";
+   secret_key="h0rVSMHQPkoLjBexBtbOrCiT7Sx8lAQ6";
+}
+
+size_t Audio2Text::writeMethod(void *ptr,size_t size,size_t nmemb,char **result)
+{
+   size_t result_len=size*nmemb;
+   *result=(char *)realloc(*result,result_len+1);
+   if(*result==NULL)
+   {
+      cout<<"realloc failed!!~"<<endl;
+      return 1;
+   }
+   memcpy(*result,ptr,result_len);
+   (*result)[result_len]='\0';
+   printf("%s\n",*result);
+   return result_len;
+}
+
+void Audio2Text::getTextFromBD(char *fileName,char *format,int rate,char * & text)
+{
+   FILE * fp=NULL;
+   fp=fopen(fileName,"r");
+   if(fp==NULL)
+   {
+       cout<<"open the file:"<<fileName<<" failed!!~"<<endl;
+   }
+   fseek(fp,0,SEEK_END);
+   int content_len=ftell(fp);
+   fseek(fp,0,SEEK_SET);
+   char *audioData=(char *)malloc(content_len);
+   fread(audioData,content_len,sizeof(char),fp);
+   char host[MAX_BUFFER_SIZE];
+   snprintf(host,sizeof(host),"http://vop.baidu.com/server_api");
+   FILE *fpp=NULL;
+   char tmp[MAX_BUFFER_SIZE];
+   memset(tmp,0,sizeof(tmp));
+   char body[MAX_BODY_SIZE];
+   memset(body,0,sizeof(body));
+   string decode_data=base64_encode((const unsigned char *)audioData,content_len);
+   if(decode_data.length()==0)
+   {
+      cout<<"base64 encoded data is empty!!~"<<endl;
+   }
+   Json::Value buffer;
+   Json::FastWriter trans;
+   buffer["format"]=format;
+   buffer["rate"]=rate;
+   buffer["channel"]=1;
+   buffer["token"]=getToken();
+   buffer["cuid"]=getCuid();
+   buffer["speech"]=decode_data;
+   buffer["len"]=content_len;
+   content_len=trans.write(buffer).length();
+   memcpy(body,trans.write(buffer).c_str(),content_len);
+   CURL *curl;
+   CURLcode res;
+   char *resultBuf=NULL;
+   struct curl_slist *header_list=NULL;
+   snprintf(tmp,sizeof(tmp),"%s","Content-Type: application/json; charset=utf-8");
+   header_list=curl_slist_append(header_list,tmp);
+   snprintf(tmp,sizeof(tmp),"Content-Length: %d", content_len);
+   header_list=curl_slist_append(header_list,tmp);
+   curl=curl_easy_init();
+   curl_easy_setopt(curl,CURLOPT_URL,host);
+   curl_easy_setopt(curl,CURLOPT_POST,1);
+   curl_easy_setopt(curl,CURLOPT_TIMEOUT,30);
+   curl_easy_setopt(curl,CURLOPT_HTTPHEADER,header_list);
+   curl_easy_setopt(curl,CURLOPT_POSTFIELDS,body);
+   curl_easy_setopt(curl,CURLOPT_POSTFIELDSIZE,content_len);
+   curl_easy_setopt(curl,CURLOPT_WRITEFUNCTION,writeMethod);
+   curl_easy_setopt(curl,CURLOPT_WRITEDATA,&resultBuf);
+   res=curl_easy_perform(curl);
+   if(res!=CURLE_OK)
+   {
+      cout<<"perform curl failed!!~ error code: "<<res<<endl;
+   }
+   curl_slist_free_all(header_list);
+   curl_easy_cleanup(curl);
+   Json::Reader reader;
+   Json::Value root;
+   Json::Value results;
+   string err_msg;
+   string retval="";
+   if(!reader.parse(resultBuf,root,false))
+   {
+       cout<<"parse the json failed!!~"<<endl;
+   }
+   else
+   {
+       err_msg=root["err_msg"].asString();
+       if(err_msg=="success.")
+       {
+           results=root["result"];
+           retval=results[0].asString();
+       }
+       else
+       {
+           cout<<"transform failed!!~"<<endl;
+       }
+   }
+   fclose(fp);
+   free(audioData);
+   strcpy(text,retval.c_str());
 }
 
 void Audio2Text::getText(const char *fileName, char * text)
@@ -115,40 +231,44 @@ void Audio2Text::getText(const char *fileName, char * text)
    usleep(100);
 }
 
-char * Audio2Text::findAudio(char *dir,char *name)
+char * Audio2Text::findAudio(char *dir,char *fileName)
 {
-   DIR *p_dir;
-   char buf[1024];
-   strcpy(buf,dir);
-   strcat(buf,"/");
-   struct dirent *p_dirent;
-   cout<<"f"<<endl;
-   if((p_dir=opendir(dir))==NULL)
-   {
-       cout<<"cannot open the directory!!~"<<endl;
-       return "傻逼";
-   }
-   cout<<"open"<<endl;
-   while((p_dirent=readdir(p_dir)))
-   {
-       cout<<p_dirent->d_name<<endl;
-       if(p_dirent->d_type==8)
-       {
-          if(compare(name,p_dirent->d_name))
-               return strcat(buf,p_dirent->d_name);
-       }
-   }
-   return "傻逼";
+    DIR *p_dir;
+    char buf[1024];
+    strcpy(buf,dir);
+    strcat(buf,"/");
+    struct dirent *p_dirent;
+    int max_rate=-1;
+    char tmp[1024];
+    if((p_dir=opendir(dir))==NULL)
+    {
+        cout<<"failed to open the directory: "<<dir<<endl;
+        return "no";
+    }
+    while((p_dirent=readdir(p_dir)))
+    {
+        if(p_dirent->d_type==8)
+        {
+            int _tmp=similarRate(p_dirent->d_name,fileName);
+            if(_tmp>max_rate)
+            {
+                max_rate=_tmp;
+                strcpy(tmp,p_dirent->d_name);
+            }
+        }
+    }
+    return strcat(buf,tmp);
 }
 
-
-
-
-
-
-
-
-
+int main()
+{
+    Audio2Text *audio=new Audio2Text("appid= 53a38a05, work_dir =   .  ","sub=iat,ssm=1,auf=audio/L16;rate=16000,aue=raw,ent=sms16k,rst=plain,rse=utf8,cfd=900,ptt=0;");
+    char *buf=new char[1024];
+    audio->getTextFromBD("test.wav","wav",16000,buf);
+    cout<<buf<<endl;
+    cout<<audio->findAudio(".",buf)<<endl;
+    delete [] buf;
+}
 
 
 
