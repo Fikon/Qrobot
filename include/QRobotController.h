@@ -1,11 +1,11 @@
-/*
- *\file QRobotController.h
+/*!
+ * \file QRobotController.h
  *
- *\brief 定义QRobotController类
+ * \brief 定义QRobotController类
  *
- *这个类为机器人的控制类，定义了其基本操作的接口
+ * 这个类为机器人的控制类，定义了其基本操作的接口
  *
- *\author 蒋慧强
+ * \author 蒋慧强
  *
  */
 
@@ -43,8 +43,8 @@ public:
    //!控制左边翅膀的运动,方向向上
    /*!
     *
-    *\param speed 运动速度挡位（1.2.3）
-    *\param time 运动时间(0-100) 单位20ms
+    * \param speed 运动速度挡位（1.2.3）
+    * \param time 运动时间(0-100) 单位20ms
     *
     */
    bool leftWingUp(int speed,int time);
@@ -52,7 +52,7 @@ public:
    //!控制左边翅膀回到原点
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
+    * \param speed 运动速度挡位（1，2，3）
     *
     */
    bool leftWingOrg(int speed);
@@ -60,8 +60,8 @@ public:
    //!控制左边翅膀运动，方向向下
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
-    *\param time 运动时间（0-100）单位为20ms
+    * \param speed 运动速度挡位（1，2，3）
+    * \param time 运动时间（0-100）单位为20ms
     *
     */
    bool leftWingDown(int speed,int time);
@@ -69,8 +69,8 @@ public:
    //!控制右边边翅膀的运动,方向向上
    /*!
     *
-    *\param speed 运动速度挡位（1.2.3）
-    *\param time 运动时间(0-100) 单位20ms
+    * \param speed 运动速度挡位（1.2.3）
+    * \param time 运动时间(0-100) 单位20ms
     *
     */
    bool rightWingUp(int speed,int time);
@@ -78,7 +78,7 @@ public:
    //!控制右边翅膀回到原点
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
+    * \param speed 运动速度挡位（1，2，3）
     *
     */
    bool rightWingOrg(int speed);
@@ -86,8 +86,8 @@ public:
    //!控制右边翅膀运动，方向向下
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
-    *\param time 运动时间（0-100）单位为20ms
+    * \param speed 运动速度挡位（1，2，3）
+    * \param time 运动时间（0-100）单位为20ms
     *
     */
    bool rightWingDown(int speed,int time);
@@ -95,8 +95,8 @@ public:
    //!控制头部水平运动
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
-    *\param range 运动角度（0~100）相对于原点
+    * \param speed 运动速度挡位（1，2，3）
+    * \param range 运动角度（0~100）相对于原点
     *
     */
    bool horizontalHead(int speed,int range);
@@ -104,7 +104,7 @@ public:
    //!控制头部水平运动回到原点
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
+    * \param speed 运动速度挡位（1，2，3）
     *
     */
    bool horizontalHeadOrg(int speed);
@@ -112,8 +112,8 @@ public:
    //!控制头部垂直运动
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
-    *\param range 运动角度（0~40）相对于原点
+    * \param speed 运动速度挡位（1，2，3）
+    * \param range 运动角度（0~40）相对于原点
     *
     */
     bool verticalHead(int speed,int range);
@@ -121,7 +121,7 @@ public:
    //!控制头部垂直运动回到原点
    /*!
     *
-    *\param speed 运动速度挡位（1，2，3）
+    * \param speed 运动速度挡位（1，2，3）
     *
     */
     bool verticalHeadOrg(int speed);
@@ -129,9 +129,9 @@ public:
     //!设置胸部显示颜色
     /*!
      *
-     *\param red RGB值（0-255）
-     *\param green RGB值（0-255）
-     *\param blue RGB值（0-255）
+     * \param red RGB值（0-255）
+     * \param green RGB值（0-255）
+     * \param blue RGB值（0-255）
      *
      */
     bool setHeartColor(int red,int green,int blue);
@@ -139,8 +139,8 @@ public:
     //!设置眼睛表情
     /*!
      *
-     *\param time 表情循环的次数
-     *\param face 表情的编号（1-255）
+     * \param time 表情循环的次数
+     * \param face 表情的编号（1-255）
      *
      */
     bool setEyePic(int time,int face);
@@ -148,7 +148,7 @@ public:
     //!设置机器人电源状态
     /*!
      *
-     *\param state true/false
+     * \param state true/false
      *
      */
      void setPowerState(bool state)
@@ -159,7 +159,7 @@ public:
      //!读取机器人的头部角度信息(上下)
      /*!
       *
-      *\return 机器人的上下角度
+      * \return 机器人的上下角度
       *
       */
      int getHeadVertical();
@@ -167,7 +167,7 @@ public:
      //!读取机器人头部角度信息（左右）
      /*!
       *
-      *\return 机器人的左右角度
+      * \return 机器人的左右角度
       *
       */
       int getHeadHorizontal();
@@ -175,11 +175,11 @@ public:
       //!获取机器人的触摸信息
       /*!
        *
-       *\retval 0x01 头部按下
-       *\retval 0x02 头部按下松开
-       *\retval 0x12 头部长按
-       *\retval 0x04 嘴巴按下
-       *\retval 0x08 嘴巴按下松开
+       * \retval 0x01 头部按下
+       * \retval 0x02 头部按下松开
+       * \retval 0x12 头部长按
+       * \retval 0x04 嘴巴按下
+       * \retval 0x08 嘴巴按下松开
        *
        */
       int getTouchInfo();
@@ -192,7 +192,7 @@ private:
     //！析构函数
     /*!
      *
-     *释放usb设备句柄等操作
+     * 释放usb设备句柄等操作
      *
      */
      virtual ~QRobotController()
