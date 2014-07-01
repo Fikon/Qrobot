@@ -1,22 +1,10 @@
-/*
- * libmad - MPEG audio decoder library
- * Copyright (C) 2000-2004 Underbit Technologies, Inc.
+/*!
+ * \file MusicPlay.cpp
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
+ * \brief mp3音乐解码类MusicPlayer实现
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * mp3音乐解码类MusicPlayer的实现
  *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * $Id: minimad.c,v 1.4 2004/01/23 09:41:32 rob Exp $
  */
 
 # include "../include/MusicPlayer.h"
@@ -57,9 +45,19 @@ void MusicPlayer::setIsPcmBufferFull( bool isFull ){
 
 void MusicPlayer::setIsPlay( bool isPlay ){
 	this->isPlay = isPlay;
+	/*
+	if ( snd_pcm_hw_params_can_pause(params) ){
+		snd_pcm_pause(handle, 1);
+	}else{
+		snd_pcm_drop(handle);
+	}
+	*/
+	//snd_pcm_close(handle);
+	snd_pcm_drop(handle);
+
 }
 
-int MusicPlayer::playMusic(char * musicName, char * diviceName)
+int MusicPlayer::playMusic( char * musicName, char * diviceName)
 {
 	this->diviceName = diviceName;
 
@@ -89,12 +87,12 @@ int MusicPlayer::playMusic(char * musicName, char * diviceName)
 	if(set_pcm()!=0)                 //设置pcm 参数
 	{
 		printf("set_pcm fialed:\n");
-		return 1;  
+		return 4;  
 	}
 	decode((const unsigned char*)fdm, stat.st_size);
 
 	if (munmap(fdm, stat.st_size) == -1)
-		return 4;
+		return 5;
 
 	snd_pcm_drain(handle);
 	snd_pcm_close(handle);
@@ -188,10 +186,6 @@ enum mad_flow MusicPlayer::input(void *data,
 
 	buffer->length = 0;
 
-	if( !isPlay ){
-		return MAD_FLOW_STOP;
-	}
-
 	return MAD_FLOW_CONTINUE;
 }
 
@@ -279,7 +273,7 @@ enum mad_flow MusicPlayer::output(void *data,
 	OutputPtr = Output; 
 	snd_pcm_writei (handle, OutputPtr, n); 
 	OutputPtr = Output;   
-
+	
 	return MAD_FLOW_CONTINUE;
 }
 
@@ -302,7 +296,6 @@ enum mad_flow MusicPlayer::error(void *data,
 
 	/* return MAD_FLOW_BREAK here to stop decoding (and propagate an error) */
 	
-
 	return MAD_FLOW_CONTINUE;
 }
 
