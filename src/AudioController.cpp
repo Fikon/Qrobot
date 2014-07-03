@@ -119,7 +119,7 @@ int AudioController::audioWriteOut()
 //!conver the pcm to the wav!!~
 void AudioController::pcmToWav(char * fileName,int time)
 {
-   
+   printf("ok0\n");
    int rate,bytePerSec,fileLen,size=0,times;
    const char header[]={
    // RIFF WAVE Chunk 
@@ -146,13 +146,14 @@ void AudioController::pcmToWav(char * fileName,int time)
    //0x00, 0x00, 0x00, 0x00
    };
    //!计算出循环的次数
-   times=time*getRate()/getFrames();
+   times=time*getRate()/512;
    //!数据流的大小
    size=times*getFrames()*2;
    //!文件的总大小
    fileLen=size+48;
    //!采样率
-   rate=getRate();
+   rate=getRate(); 
+   printf("%d\n", rate);
    //!每秒传输的速率
    bytePerSec=rate*2;
    ofstream out(fileName,ios::binary);

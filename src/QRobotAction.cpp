@@ -4,7 +4,7 @@
 *
 *\author 丁东辉
 */
-#include"QRobotAction.h"
+#include"../include/QRobotAction.h"
 using namespace std;
 
 //构造函数
@@ -413,7 +413,4 @@ void QRobotAction::dance(){
 			//眼睛表情和颜色
 	setEyeAndColor();
 }
-int main(){
-	QRobotAction* action = new QRobotAction();
-	action -> dance();
-}
+

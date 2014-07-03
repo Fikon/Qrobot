@@ -1,3 +1,14 @@
+/*
+ * \file MusicAnalysis.cpp
+ *  
+ * \brief MusicAnalysis类
+ *  
+ * 这个类主要用于音乐分析
+ *       
+ * \author 孙正扬
+ *  
+ */
+
 #include "../include/MusicAnalysis.h"
 #include <fftw3.h>
 #include "../include/onsetsds.h"
@@ -35,22 +46,10 @@ void MusicAnalysis::pcmAnalysisInit(){
 	pcmIn = (float *)fftwf_malloc(sizeof(float) * samples);
 	fftData = (float *)fftwf_malloc(sizeof(float) * samples);
 	memset(fftData, 0.0, samples);
-	//plan = fftw_plan_r2r_1d(samples, (double*)pcmIn, (double*)fftData, FFTW_R2HC, FFTW_ESTIMATE);
 }
 
 void MusicAnalysis::pcmAnalysis(){
-//	float * in = NULL;
 	fftwf_plan plan;
-//	int _count;
-
-//	_count = samples;
-//	in = (float *)fftw_malloc(sizeof(float) * _count + 1);
-//	if ( pcmIn == NULL ){
-//		pcmIn = (float *)fftw_malloc(sizeof(float) * _count + 1);
-//	}
-//	if ( fftData == NULL ){
-//		fftData = (float *)fftw_malloc(sizeof(float) * _count + 1);
-//	}
 
 	for ( int i = 0 ; i < samples ; i ++ ){
 		pcmIn[i] = pcmData[i];
@@ -59,22 +58,14 @@ void MusicAnalysis::pcmAnalysis(){
 	memset(fftData, 0.0, samples);
 
 	plan = fftwf_plan_r2r_1d(samples, pcmIn, fftData, FFTW_R2HC, FFTW_ESTIMATE);
-//	plan = fftw_plan_r2r_1d(_count, (double*)in, (double*)fftData, FFTW_R2HC, FFTW_ESTIMATE);
 
 	for(int i = 0; i < samples; i++){
 		pcmIn[i] = pcmData[i];
 	}
 	
 	memset(fftData, 0.0, samples);
-	/*for ( int i = 0 ; i < samples ; i ++ ){
-		printf("%f\n", pcmIn[i]);
-	}*/
 
 	fftwf_execute(plan);
-/*	printf("fftData********************************************\n");
-	for (int i = 0 ; i < samples ; i ++ ){
-		printf("%f\n", fftData[i]);
-	}*/
 	fftwf_destroy_plan(plan);
 }
 
@@ -85,9 +76,6 @@ void MusicAnalysis::onsetsInit(){
 }
 
 bool MusicAnalysis::onsetsAnalysis(){
-	/*for ( int i = 0 ; i < samples ; i ++ ){
-		printf("fftData[%d] : %f\n", i, fftData[i]);
-	}*/
 	return onsetsds_process(ods, fftData);
 }
 

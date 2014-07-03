@@ -24,6 +24,10 @@ class MusicPlayer{
 		static snd_pcm_t*             handle;        //PCI设备句柄
 		void pcmBufferInit(int samples);
 		short * getPcmBuffer();
+		bool getIsPcmBufferFull();
+		void setIsPcmBufferFull( bool isFull );
+		void setIsPlay( bool isPlay );
+
 	private:
 
 		snd_pcm_hw_params_t*   params;        //硬件信息和PCM流配置
@@ -32,7 +36,8 @@ class MusicPlayer{
 		static short * pcmBuffer;                    //pcm缓冲区
 		static int sampleNum;                        //pcm缓冲区大小
 		static int sampleCount;                      //pcm缓冲区计数
-
+		static bool isPcmBufferFull;                 //标记pcm缓冲区是否已满
+		static bool isPlay;                          //标记音乐状态
 		/*
 		 * This is a private message structure. A generic pointer to this structure
 		 * is passed to each of the callback functions. Put here any data you need

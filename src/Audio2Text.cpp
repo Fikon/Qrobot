@@ -257,14 +257,10 @@ char * Audio2Text::findAudio(char *dir,char *fileName)
             }
         }
     }
-    return strcat(buf,tmp);
+    strcat(buf,tmp);
+    printf(">>>>>>>>>>%s\n", buf);
+    return buf;
 }
-
-
-
-
-
-
 
 
 
