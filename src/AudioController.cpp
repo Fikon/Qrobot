@@ -53,8 +53,9 @@ AudioController::AudioController(char * deviceName,int _frames,int _hz,int mode)
    snd_pcm_hw_params_set_channels(handle,params,2);
 
    //!set the samples' rate
+   cout<<"be"<<hz<<endl;
    snd_pcm_hw_params_set_rate_near(handle,params,&hz,&ret);
-      
+   cout<<"af"<<hz<<endl;
    //!set the period size
    snd_pcm_hw_params_set_period_size_near(handle,params,&frames,&ret);
    
@@ -185,7 +186,11 @@ void AudioController::pcmToWav(char * fileName,int time)
   // free(buf);
 }
 
-
+int main()
+{
+    AudioController *audio=new AudioController("default",512,16000,1);
+    audio->pcmToWav("szysb.wav",5);
+}
 
 
 

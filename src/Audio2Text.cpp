@@ -260,15 +260,7 @@ char * Audio2Text::findAudio(char *dir,char *fileName)
     return strcat(buf,tmp);
 }
 
-int main()
-{
-    Audio2Text *audio=new Audio2Text("appid= 53a38a05, work_dir =   .  ","sub=iat,ssm=1,auf=audio/L16;rate=16000,aue=raw,ent=sms16k,rst=plain,rse=utf8,cfd=900,ptt=0;");
-    char *buf=new char[1024];
-    audio->getTextFromBD("test.wav","wav",16000,buf);
-    cout<<buf<<endl;
-    cout<<audio->findAudio(".",buf)<<endl;
-    delete [] buf;
-}
+
 
 
 
