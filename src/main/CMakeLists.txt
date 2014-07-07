@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+SET(CMAKE_C_COMPILER g++)
+SET (EXECUTABLE_OUTPUT_PATH ${ROBOT_SOURCE_DIR}/bin)
+SET (SRC_LIST AudioController.cpp base64.cpp MusicPlayer.cpp MusicAnalysis.cpp QRobotController.cpp QRobotAction.cpp Audio2Text.cpp  Base64Codec.cpp PeopleDetection.cpp Text2Audio.cpp WavPlayer.cpp MusicRobot.cpp)
+INCLUDE_DIRECTORIES (${ROBOT_SOURCE_DIR}/include)
+LINK_DIRECTORIES (${ROBOT_SOURCE_DIR}/lib)
+ADD_EXECUTABLE (main ${SRC_LIST})
+TARGET_LINK_LIBRARIES (main sndfile fftw3f onset asound usb-1.0 mad msc dl json curl rt opencv_highgui opencv_core)

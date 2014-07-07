@@ -68,7 +68,7 @@ struct wave_pcm_hdr
 } ;
 
 //the default wav header for the pcm stream
-struct wave_pcm_hdr default_pcmwavhdr = 
+const struct wave_pcm_hdr default_pcmwavhdr = 
 
 {
 

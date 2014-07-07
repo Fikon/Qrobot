@@ -1,0 +1,2 @@
+/home/szy/文档/CMake_Project/build/src/main/CMakeFiles/main.dir
+/home/szy/文档/CMake_Project/build/src/onsets/CMakeFiles/onset.dir

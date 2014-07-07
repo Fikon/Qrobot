@@ -1,0 +1,14 @@
+libsndfile
+fftw3f
+libasound
+libusb-1.0
+libmad
+librt
+
+
+下面是两个静态库（在文件夹msc里面）
+libjson
+libcurl
+
+另外
+-fPIC -lmsc -ldl是讯飞里面的，是你写的，你看一下是什么库
