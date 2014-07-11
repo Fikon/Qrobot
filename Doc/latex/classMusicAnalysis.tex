@@ -1,0 +1,67 @@
+\hypertarget{classMusicAnalysis}{\section{\-Music\-Analysis \-Class \-Reference}
+\label{classMusicAnalysis}\index{\-Music\-Analysis@{\-Music\-Analysis}}
+}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMusicAnalysis_afd466b6be98a4919713dbfb488d2940b}{\hyperlink{classMusicAnalysis_afd466b6be98a4919713dbfb488d2940b}{\-Music\-Analysis} ()}\label{classMusicAnalysis_afd466b6be98a4919713dbfb488d2940b}
+
+\begin{DoxyCompactList}\small\item\em 构造函数1 \end{DoxyCompactList}\item 
+\hyperlink{classMusicAnalysis_a2696773487959b7581b3478789478ab5}{\-Music\-Analysis} (int channels, int sample\-Rate, int samples)
+\begin{DoxyCompactList}\small\item\em 构造函数2 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_a3df9fb4f94de5cc2b7177d9330ec1e90}{\hyperlink{classMusicAnalysis_a3df9fb4f94de5cc2b7177d9330ec1e90}{$\sim$\-Music\-Analysis} ()}\label{classMusicAnalysis_a3df9fb4f94de5cc2b7177d9330ec1e90}
+
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_a799a99f2f26b9795b37a8bb3b4df4db4}{void \hyperlink{classMusicAnalysis_a799a99f2f26b9795b37a8bb3b4df4db4}{pcm\-Analysis\-Init} ()}\label{classMusicAnalysis_a799a99f2f26b9795b37a8bb3b4df4db4}
+
+\begin{DoxyCompactList}\small\item\em pcm分析初始化函数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_a25a81fa655054b85f0a45744c27e28d5}{void \hyperlink{classMusicAnalysis_a25a81fa655054b85f0a45744c27e28d5}{pcm\-Analysis} ()}\label{classMusicAnalysis_a25a81fa655054b85f0a45744c27e28d5}
+
+\begin{DoxyCompactList}\small\item\em pcm数据分析函数，必须在调用pcm\-Analysis\-Init()之后调用 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_af44f11b664c059a825abf6a35427ebe7}{void \hyperlink{classMusicAnalysis_af44f11b664c059a825abf6a35427ebe7}{onsets\-Init} ()}\label{classMusicAnalysis_af44f11b664c059a825abf6a35427ebe7}
+
+\begin{DoxyCompactList}\small\item\em onsets检测初始化函数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_a79c0914b83e93ece950ca436c97e72b9}{bool \hyperlink{classMusicAnalysis_a79c0914b83e93ece950ca436c97e72b9}{onsets\-Analysis} ()}\label{classMusicAnalysis_a79c0914b83e93ece950ca436c97e72b9}
+
+\begin{DoxyCompactList}\small\item\em onsets检测函数，必须在调用onsets\-Init()之后调用 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_a3ed29f61608c75ace4dc89a79febc159}{void \hyperlink{classMusicAnalysis_a3ed29f61608c75ace4dc89a79febc159}{set\-Pcm\-Data} (short $\ast$data, int samples, int sample\-Rate, int channels)}\label{classMusicAnalysis_a3ed29f61608c75ace4dc89a79febc159}
+
+\begin{DoxyCompactList}\small\item\em 设置pcm数据，同时可以设置一些参数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicAnalysis_aaf5e486fb8a929a6b6391385c28542eb}{void \hyperlink{classMusicAnalysis_aaf5e486fb8a929a6b6391385c28542eb}{set\-Pcm\-Data} (short $\ast$data)}\label{classMusicAnalysis_aaf5e486fb8a929a6b6391385c28542eb}
+
+\begin{DoxyCompactList}\small\item\em 设置pcm数据 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classMusicAnalysis_a2696773487959b7581b3478789478ab5}{\index{\-Music\-Analysis@{\-Music\-Analysis}!\-Music\-Analysis@{\-Music\-Analysis}}
+\index{\-Music\-Analysis@{\-Music\-Analysis}!MusicAnalysis@{\-Music\-Analysis}}
+\subsubsection[{\-Music\-Analysis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Music\-Analysis\-::\-Music\-Analysis} (
+\begin{DoxyParamCaption}
+\item[{int}]{channels, }
+\item[{int}]{sample\-Rate, }
+\item[{int}]{samples}
+\end{DoxyParamCaption}
+)}}\label{classMusicAnalysis_a2696773487959b7581b3478789478ab5}
+
+
+构造函数2 
+
+构造函数，可用于初始化一些变量
+
+可初始化channels,sample\-Rate,samples
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em channels} & 声道数 \\
+\hline
+{\em sample\-Rate} & 采样率 \\
+\hline
+{\em samples} & 采样数 \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{MusicAnalysis_8h}{\-Music\-Analysis.\-h}\item 
+\hyperlink{MusicAnalysis_8cpp}{\-Music\-Analysis.\-cpp}\end{DoxyCompactItemize}

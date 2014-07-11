@@ -1,0 +1,183 @@
+\hypertarget{classAudioController}{\section{\-Audio\-Controller \-Class \-Reference}
+\label{classAudioController}\index{\-Audio\-Controller@{\-Audio\-Controller}}
+}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAudioController_aae9107432bac4c1343a8ef4c43810b26}{\-Audio\-Controller} (char $\ast$device\-Name, int frames, int hz, int mode)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\hypertarget{classAudioController_a84769d1c3e7fa4739e8967d37510f5e3}{\hyperlink{classAudioController_a84769d1c3e7fa4739e8967d37510f5e3}{\-Audio\-Controller} (const \hyperlink{classAudioController}{\-Audio\-Controller} \&)}\label{classAudioController_a84769d1c3e7fa4739e8967d37510f5e3}
+
+\begin{DoxyCompactList}\small\item\em 复制构造函数 \end{DoxyCompactList}\item 
+virtual \hyperlink{classAudioController_aa0a806374cdeb9328683b368261ca7ab}{$\sim$\-Audio\-Controller} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+int \hyperlink{classAudioController_a6e7d094660d78edfd74535232fe32e65}{audio\-Read\-In} ()
+\begin{DoxyCompactList}\small\item\em 录音 \end{DoxyCompactList}\item 
+int \hyperlink{classAudioController_af9ebb304d0f85aa595e97cd44de8dcae}{audio\-Write\-Out} ()
+\begin{DoxyCompactList}\small\item\em 播放 \end{DoxyCompactList}\item 
+\hypertarget{classAudioController_a858c0b9cebc797b0a9e5aa518deaa0c1}{short $\ast$ \hyperlink{classAudioController_a858c0b9cebc797b0a9e5aa518deaa0c1}{get\-Buffer} ()}\label{classAudioController_a858c0b9cebc797b0a9e5aa518deaa0c1}
+
+\begin{DoxyCompactList}\small\item\em buffer 的getter函数 \end{DoxyCompactList}\item 
+void \hyperlink{classAudioController_a5fdb028ea4763db7bee10545f06b937f}{pcm\-To\-Wav} (char $\ast$file\-Name, int time)
+\begin{DoxyCompactList}\small\item\em convert the pcm-\/file to the wav-\/file \end{DoxyCompactList}\item 
+\hypertarget{classAudioController_a918f4175143c6a44ed7c7cf6c3b41011}{unsigned int \hyperlink{classAudioController_a918f4175143c6a44ed7c7cf6c3b41011}{get\-Rate} ()}\label{classAudioController_a918f4175143c6a44ed7c7cf6c3b41011}
+
+\begin{DoxyCompactList}\small\item\em hz 的getter 函数 \end{DoxyCompactList}\item 
+\hypertarget{classAudioController_a945f2b786d90a1847159119385b75db2}{int \hyperlink{classAudioController_a945f2b786d90a1847159119385b75db2}{get\-Frames} ()}\label{classAudioController_a945f2b786d90a1847159119385b75db2}
+
+\begin{DoxyCompactList}\small\item\em frame 的getter 函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classAudioController_aae9107432bac4c1343a8ef4c43810b26}{\index{\-Audio\-Controller@{\-Audio\-Controller}!\-Audio\-Controller@{\-Audio\-Controller}}
+\index{\-Audio\-Controller@{\-Audio\-Controller}!AudioController@{\-Audio\-Controller}}
+\subsubsection[{\-Audio\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Audio\-Controller\-::\-Audio\-Controller} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{device\-Name, }
+\item[{int}]{frames, }
+\item[{int}]{hz, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classAudioController_aae9107432bac4c1343a8ef4c43810b26}
+
+
+构造函数 
+
+实现构造函数
+
+对音频设备的初始化
+
+并且传入一些配置的参数
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em device\-Name} & 音频设备的标识\-I\-D \\
+\hline
+{\em frames} & 输入输出音频的帧大小 \\
+\hline
+{\em hz} & 输入输出音频的频率 \\
+\hline
+{\em mode} & 打开设备的模式1是录音，2是播放 \\
+\hline
+\end{DoxyParams}
+选择打开模式1为录音模式，2为播放模式
+
+\-Allocate a hardware parameters object
+
+fill the parameter with the default values
+
+set the \-I\-O mode with interleaced
+
+set 16-\/bit litter-\/endian format
+
+set two channels
+
+set the samples' rate
+
+set the period size
+
+write the parameters to the driver
+
+user a buffer large enough to hold one period \hypertarget{classAudioController_aa0a806374cdeb9328683b368261ca7ab}{\index{\-Audio\-Controller@{\-Audio\-Controller}!$\sim$\-Audio\-Controller@{$\sim$\-Audio\-Controller}}
+\index{$\sim$\-Audio\-Controller@{$\sim$\-Audio\-Controller}!AudioController@{\-Audio\-Controller}}
+\subsubsection[{$\sim$\-Audio\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Audio\-Controller\-::$\sim$\-Audio\-Controller} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classAudioController_aa0a806374cdeb9328683b368261ca7ab}
+
+
+析构函数 
+
+释放音频设备的持有句柄以及\-I\-O数组 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classAudioController_a6e7d094660d78edfd74535232fe32e65}{\index{\-Audio\-Controller@{\-Audio\-Controller}!audio\-Read\-In@{audio\-Read\-In}}
+\index{audio\-Read\-In@{audio\-Read\-In}!AudioController@{\-Audio\-Controller}}
+\subsubsection[{audio\-Read\-In}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Audio\-Controller\-::audio\-Read\-In} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAudioController_a6e7d094660d78edfd74535232fe32e65}
+
+
+录音 
+
+从设备中读取音频数据，将数据储存在类成员buffer中
+
+调用该函数的方法应该是在一个循环当中，每次调用之后应该立即 使用buffer中读取的音频数据，防止被下一次输入所覆盖
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em -\/1} & error \\
+\hline
+{\em 0} & success \\
+\hline
+{\em 1} & overrun 表示处理buffer缓存区不够快而被新的数据覆盖了 \\
+\hline
+{\em 2} & shortread 表示buffer缓存区未读满 \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classAudioController_af9ebb304d0f85aa595e97cd44de8dcae}{\index{\-Audio\-Controller@{\-Audio\-Controller}!audio\-Write\-Out@{audio\-Write\-Out}}
+\index{audio\-Write\-Out@{audio\-Write\-Out}!AudioController@{\-Audio\-Controller}}
+\subsubsection[{audio\-Write\-Out}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Audio\-Controller\-::audio\-Write\-Out} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAudioController_af9ebb304d0f85aa595e97cd44de8dcae}
+
+
+播放 
+
+控制设备播放特定的音频数据
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em -\/1} & error \\
+\hline
+{\em 0} & success \\
+\hline
+{\em 1} & end of file 在传入的数据是一个文件且已经到了文件末 \\
+\hline
+{\em 2} & underrun 应用程序写到buffer的速度太慢，导致饿死 \\
+\hline
+{\em 3} & shortwrite 剩余传输的数据不够一个buffer \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classAudioController_a5fdb028ea4763db7bee10545f06b937f}{\index{\-Audio\-Controller@{\-Audio\-Controller}!pcm\-To\-Wav@{pcm\-To\-Wav}}
+\index{pcm\-To\-Wav@{pcm\-To\-Wav}!AudioController@{\-Audio\-Controller}}
+\subsubsection[{pcm\-To\-Wav}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Audio\-Controller\-::pcm\-To\-Wav} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file\-Name, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classAudioController_a5fdb028ea4763db7bee10545f06b937f}
+
+
+convert the pcm-\/file to the wav-\/file 
+
+conver the pcm to the wav!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em file\-Name} & the name of the file for storing wav file \\
+\hline
+{\em time} & the time of reading in audios!!$\sim$ \\
+\hline
+\end{DoxyParams}
+计算出循环的次数
+
+数据流的大小
+
+文件的总大小
+
+采样率
+
+每秒传输的速率
+
+给pcm数据流加上头，以转化为wav格式 
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AudioController_8h}{\-Audio\-Controller.\-h}\item 
+\-Audio\-Controller.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{qtts_8h}{\section{qtts.\-h \-File \-Reference}
+\label{qtts_8h}\index{qtts.\-h@{qtts.\-h}}
+}
+
+
+i\-F\-L\-Y \-Speech \-Synthesizer \-Header \-File  
+
+
+{\ttfamily \#include \char`\"{}msp\-\_\-types.\-h\char`\"{}}\*
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{qtts_8h_a6f047d676defaf95780f503ee1e92f5b}{typedef const char $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Session\-Begin} )(const char $\ast$params, int $\ast$error\-Code)}\label{qtts_8h_a6f047d676defaf95780f503ee1e92f5b}
+
+\item 
+\hypertarget{qtts_8h_a624c4ce7f5daa3a0ad20951f3d386806}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Text\-Put} )(const char $\ast$session\-I\-D, const char $\ast$text\-String, unsigned int text\-Len, const char $\ast$params)}\label{qtts_8h_a624c4ce7f5daa3a0ad20951f3d386806}
+
+\item 
+\hypertarget{qtts_8h_aad6e5883dccfbf584c901a145531c76c}{typedef const void $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Audio\-Get} )(const char $\ast$session\-I\-D, unsigned int $\ast$audio\-Len, int $\ast$synth\-Status, int $\ast$error\-Code)}\label{qtts_8h_aad6e5883dccfbf584c901a145531c76c}
+
+\item 
+\hypertarget{qtts_8h_ac7da5331fdf649fee3a1babb97a326a0}{typedef const char $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Audio\-Info} )(const char $\ast$session\-I\-D)}\label{qtts_8h_ac7da5331fdf649fee3a1babb97a326a0}
+
+\item 
+\hypertarget{qtts_8h_affcf3a7776f6603b1b755bafe98d30b1}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Session\-End} )(const char $\ast$session\-I\-D, const char $\ast$hints)}\label{qtts_8h_affcf3a7776f6603b1b755bafe98d30b1}
+
+\item 
+\hypertarget{qtts_8h_ada1ec7f4ab5ea142637a2b2e7a872324}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Get\-Param} )(const char $\ast$session\-I\-D, const char $\ast$param\-Name, char $\ast$param\-Value, unsigned int $\ast$value\-Len)}\label{qtts_8h_ada1ec7f4ab5ea142637a2b2e7a872324}
+
+\item 
+\hypertarget{qtts_8h_aa7252d718de4f5743a1b5fe498b3ebd7}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-T\-T\-S\-Set\-Param} )(const char $\ast$session\-I\-D, const char $\ast$param\-Name, char $\ast$param\-Value)}\label{qtts_8h_aa7252d718de4f5743a1b5fe498b3ebd7}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{qtts_8h_a3fba4ad9599445073335851cc9479542}{const char $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Session\-Begin} (const char $\ast$params, int $\ast$error\-Code)}\label{qtts_8h_a3fba4ad9599445073335851cc9479542}
+
+\item 
+\hypertarget{qtts_8h_a5b7d146d6a35341d4d73efd720ae987b}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Text\-Put} (const char $\ast$session\-I\-D, const char $\ast$text\-String, unsigned int text\-Len, const char $\ast$params)}\label{qtts_8h_a5b7d146d6a35341d4d73efd720ae987b}
+
+\item 
+\hypertarget{qtts_8h_a4e4f6bed4b9e4ea553aa00ccf539c22a}{const void $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Audio\-Get} (const char $\ast$session\-I\-D, unsigned int $\ast$audio\-Len, int $\ast$synth\-Status, int $\ast$error\-Code)}\label{qtts_8h_a4e4f6bed4b9e4ea553aa00ccf539c22a}
+
+\item 
+\hypertarget{qtts_8h_a4fd37b71bc300e0ed91a82931e76569b}{const char $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Audio\-Info} (const char $\ast$session\-I\-D)}\label{qtts_8h_a4fd37b71bc300e0ed91a82931e76569b}
+
+\item 
+\hypertarget{qtts_8h_a75d5047a2a889dbd890d116a6d0b550a}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Session\-End} (const char $\ast$session\-I\-D, const char $\ast$hints)}\label{qtts_8h_a75d5047a2a889dbd890d116a6d0b550a}
+
+\item 
+\hypertarget{qtts_8h_a0812612ff738a828490e4e3db59767e8}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Get\-Param} (const char $\ast$session\-I\-D, const char $\ast$param\-Name, char $\ast$param\-Value, unsigned int $\ast$value\-Len)}\label{qtts_8h_a0812612ff738a828490e4e3db59767e8}
+
+\item 
+\hypertarget{qtts_8h_a4bd0f483f8562a5c17c985cd9b1b81fb}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-T\-T\-S\-Set\-Param} (const char $\ast$session\-I\-D, const char $\ast$param\-Name, const char $\ast$param\-Value)}\label{qtts_8h_a4bd0f483f8562a5c17c985cd9b1b81fb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+i\-F\-L\-Y \-Speech \-Synthesizer \-Header \-File \-This file contains the quick application programming interface (\-A\-P\-I) declarations of \-T\-T\-S. \-Developer can include this file in your project to build applications. \-For more information, please read the developer guide.
+
+\-Use of this software is subject to certain restrictions and limitations set forth in a license agreement entered into between i\-F\-L\-Y\-T\-E\-K, \-Co,\-L\-T\-D. and the licensee of this software. \-Please refer to the license agreement for license use rights and restrictions.
+
+\-Copyright (\-C) 1999 -\/ 2009 by \-A\-N\-H\-U\-I \-U\-S\-T\-C i\-F\-L\-Y\-T\-E\-K, \-Co,\-L\-T\-D. \-All rights reserved.
+
+\begin{DoxyAuthor}{\-Author}
+\-Speech \-Dept. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+2009/11/26
+\end{DoxyDate}
+\begin{DoxySeeAlso}{\-See also}
+
+\end{DoxySeeAlso}
+{\bfseries \-History\-:}\par
+ \begin{TabularC}{4}
+\hline
+\-Version &\-Date &\-Author &\-Notes \\\cline{1-4}
+1.\-0 &2009/11/26 &\-Speech &\-Create this file \\\cline{1-4}
+\end{TabularC}

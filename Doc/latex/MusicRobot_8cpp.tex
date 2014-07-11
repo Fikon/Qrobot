@@ -1,0 +1,360 @@
+\hypertarget{MusicRobot_8cpp}{\section{\-Music\-Robot.\-cpp \-File \-Reference}
+\label{MusicRobot_8cpp}\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}}
+}
+
+
+主函数所在类  
+
+
+{\ttfamily \#include $<$cstdio$>$}\*
+{\ttfamily \#include \char`\"{}../include/\-Q\-Robot\-Controller.\-h\char`\"{}}\*
+{\ttfamily \#include $<$pthread.\-h$>$}\*
+{\ttfamily \#include \char`\"{}../include/\-Music\-Analysis.\-h\char`\"{}}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include \char`\"{}../include/\-Q\-Robot\-Action.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}../include/\-Music\-Player.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}../include/\-Audio2\-Text.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}../include/\-People\-Detection.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}../include/\-Text2\-Audio.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}../include/\-Audio\-Controller.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}../include/\-Wav\-Player.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{MusicRobot_8cpp_aea8e6497290e4358c976ee7806b1e688}{\#define \hyperlink{MusicRobot_8cpp_aea8e6497290e4358c976ee7806b1e688}{\-A\-U\-D\-I\-O\-\_\-\-N\-A\-M\-E}~\char`\"{}hw\-:0,0\char`\"{}}\label{MusicRobot_8cpp_aea8e6497290e4358c976ee7806b1e688}
+
+\begin{DoxyCompactList}\small\item\em \-Q\-Robot设备名称 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ac8a823faddf09d57469ec3819e912852}{\#define \hyperlink{MusicRobot_8cpp_ac8a823faddf09d57469ec3819e912852}{\-F\-R\-A\-M\-E\-\_\-\-N\-U\-M}~32}\label{MusicRobot_8cpp_ac8a823faddf09d57469ec3819e912852}
+
+\begin{DoxyCompactList}\small\item\em 帧的数量 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a4b76a0c2859cfd819a343a780070ee2b}{\#define \hyperlink{MusicRobot_8cpp_a4b76a0c2859cfd819a343a780070ee2b}{\-S\-A\-M\-P\-L\-E\-\_\-\-R\-A\-T\-E}~44100}\label{MusicRobot_8cpp_a4b76a0c2859cfd819a343a780070ee2b}
+
+\begin{DoxyCompactList}\small\item\em 采样率 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a19b7f1b22403d61234a92decaeb6953a}{\#define \hyperlink{MusicRobot_8cpp_a19b7f1b22403d61234a92decaeb6953a}{\-C\-H\-A\-N\-N\-E\-L\-S}~2}\label{MusicRobot_8cpp_a19b7f1b22403d61234a92decaeb6953a}
+
+\begin{DoxyCompactList}\small\item\em 声道数 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ab65111dd2c7870ed53ac23601a83f4c4}{\#define \hyperlink{MusicRobot_8cpp_ab65111dd2c7870ed53ac23601a83f4c4}{\-L\-O\-G\-I\-N\-\_\-\-C\-O\-N\-F\-I\-G\-S}~\char`\"{}appid = 53a38a05, work\-\_\-dir =   .  \char`\"{}}\label{MusicRobot_8cpp_ab65111dd2c7870ed53ac23601a83f4c4}
+
+\begin{DoxyCompactList}\small\item\em 语音识别参数1 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a06f64f95aa2e34492ed9fc0d9cf70f42}{\#define \hyperlink{MusicRobot_8cpp_a06f64f95aa2e34492ed9fc0d9cf70f42}{\-V\-O\-I\-C\-E2\-T\-E\-X\-T\-\_\-\-P\-A\-R\-A\-M}~\char`\"{}sub=iat,ssm=1,auf=audio/\-L16;rate=16000,aue=raw,ent=sms16k,rst=plain,rse=utf8,cfd=1000,ptt=0;\char`\"{}}\label{MusicRobot_8cpp_a06f64f95aa2e34492ed9fc0d9cf70f42}
+
+\begin{DoxyCompactList}\small\item\em 语音室别参数2 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{MusicRobot_8cpp_ae8cd33674b08c578b4084a35c12c43eb}{void \hyperlink{MusicRobot_8cpp_ae8cd33674b08c578b4084a35c12c43eb}{wing\-Movement} ()}\label{MusicRobot_8cpp_ae8cd33674b08c578b4084a35c12c43eb}
+
+\begin{DoxyCompactList}\small\item\em 用于控制翅膀运动的函数 \end{DoxyCompactList}\item 
+void \hyperlink{MusicRobot_8cpp_ae591ec81359f58f1b2f41661f61a4732}{set\-Speed} (int time)
+\begin{DoxyCompactList}\small\item\em 调节速度 \end{DoxyCompactList}\item 
+void \hyperlink{MusicRobot_8cpp_a56aea96c060de9fb8d829ce4ca3ab485}{text\-To\-Audio} (char $\ast$text)
+\begin{DoxyCompactList}\small\item\em 语音合成函数 \end{DoxyCompactList}\item 
+void \hyperlink{MusicRobot_8cpp_a05224a1b70c646aa4f88bcb69b224a54}{select\-Song} ()
+\begin{DoxyCompactList}\small\item\em 选歌函数 \end{DoxyCompactList}\item 
+void \hyperlink{MusicRobot_8cpp_a25d0add76cc067d8dc3411b238394ab0}{close\-Robot} ()
+\begin{DoxyCompactList}\small\item\em 关机函数 \end{DoxyCompactList}\item 
+void \hyperlink{MusicRobot_8cpp_aeca1452756ab46f9a9f57b8777218663}{audio\-To\-Text} (char $\ast$\&out\-Text)
+\begin{DoxyCompactList}\small\item\em 语音输入 \end{DoxyCompactList}\item 
+bool \hyperlink{MusicRobot_8cpp_af6eac290a108f6f414e82147a031cc45}{str\-Match} (char $\ast$\&str1, char $\ast$\&str2)
+\begin{DoxyCompactList}\small\item\em 字符串匹配 \end{DoxyCompactList}\item 
+int \hyperlink{MusicRobot_8cpp_a9534dc25a345c47376b01d2b5b7e2e56}{command\-Match} (char $\ast$\&text)
+\begin{DoxyCompactList}\small\item\em 命令匹配 \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{MusicRobot_8cpp_aa9b96112787dadae4e12367390fc3d51}{thread\-Run} (void $\ast$thread\-Id)
+\begin{DoxyCompactList}\small\item\em 线程函数 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a0995d4fd4ba694c9b2bced0fad1622ba}{void \hyperlink{MusicRobot_8cpp_a0995d4fd4ba694c9b2bced0fad1622ba}{delete\-Class} ()}\label{MusicRobot_8cpp_a0995d4fd4ba694c9b2bced0fad1622ba}
+
+\begin{DoxyCompactList}\small\item\em 类空间释放 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{int \hyperlink{MusicRobot_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()}\label{MusicRobot_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCompactList}\small\item\em 主函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{MusicRobot_8cpp_aaf9ded12f398d7e1651c9d0d9be6255b}{const int \hyperlink{MusicRobot_8cpp_aaf9ded12f398d7e1651c9d0d9be6255b}{\-T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M} = 5}\label{MusicRobot_8cpp_aaf9ded12f398d7e1651c9d0d9be6255b}
+
+\begin{DoxyCompactList}\small\item\em 线程数 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_abd6cac975d08d5ae7a6430adeecd63b4}{pthread\-\_\-mutex\-\_\-t {\bfseries mutex0} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-M\-U\-T\-E\-X\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_abd6cac975d08d5ae7a6430adeecd63b4}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a31aeacad19264d9cad96c2ceb274456d}{pthread\-\_\-mutex\-\_\-t {\bfseries mutex1} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-M\-U\-T\-E\-X\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_a31aeacad19264d9cad96c2ceb274456d}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a64d945a28a1d31209c31cc68e7bf841c}{pthread\-\_\-mutex\-\_\-t {\bfseries mutex2} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-M\-U\-T\-E\-X\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_a64d945a28a1d31209c31cc68e7bf841c}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a11d98f755d437c95ff6a19dfca240ace}{pthread\-\_\-mutex\-\_\-t {\bfseries mutex3} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-M\-U\-T\-E\-X\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_a11d98f755d437c95ff6a19dfca240ace}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a24bbbe3da53bbe41d9db4cd12dbaafdb}{pthread\-\_\-cond\-\_\-t {\bfseries cond0} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-C\-O\-N\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_a24bbbe3da53bbe41d9db4cd12dbaafdb}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a34ecf1c92667d882ee3a2c235c4cc41e}{pthread\-\_\-cond\-\_\-t {\bfseries cond1} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-C\-O\-N\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_a34ecf1c92667d882ee3a2c235c4cc41e}
+
+\item 
+\hypertarget{MusicRobot_8cpp_ac25fc69eebaf38e0d74c1826f6369761}{pthread\-\_\-cond\-\_\-t {\bfseries cond2} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-C\-O\-N\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_ac25fc69eebaf38e0d74c1826f6369761}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a0643e64651785ae989b962c5267955b1}{pthread\-\_\-cond\-\_\-t {\bfseries cond3} = \-P\-T\-H\-R\-E\-A\-D\-\_\-\-C\-O\-N\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{MusicRobot_8cpp_a0643e64651785ae989b962c5267955b1}
+
+\item 
+\hypertarget{MusicRobot_8cpp_af0622d636532fc030d926fd752e9a614}{int \hyperlink{MusicRobot_8cpp_af0622d636532fc030d926fd752e9a614}{onsets\-Num} = 8}\label{MusicRobot_8cpp_af0622d636532fc030d926fd752e9a614}
+
+\begin{DoxyCompactList}\small\item\em 当不是onsets的数量达到该数值时做动作 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_abedfe5771dc91a83bb5395e5796611cc}{\hyperlink{classAudioController}{\-Audio\-Controller} $\ast$ \hyperlink{MusicRobot_8cpp_abedfe5771dc91a83bb5395e5796611cc}{audio\-Controller}}\label{MusicRobot_8cpp_abedfe5771dc91a83bb5395e5796611cc}
+
+\begin{DoxyCompactList}\small\item\em 音频输入输出对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a2ef13bac7255a7280510aaf48e5dec7e}{\hyperlink{classMusicAnalysis}{\-Music\-Analysis} $\ast$ \hyperlink{MusicRobot_8cpp_a2ef13bac7255a7280510aaf48e5dec7e}{music\-Analysis}}\label{MusicRobot_8cpp_a2ef13bac7255a7280510aaf48e5dec7e}
+
+\begin{DoxyCompactList}\small\item\em 音乐处理对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ad1eb662ee0491a9c564dfe81a726be1e}{\hyperlink{classQRobotController}{\-Q\-Robot\-Controller} $\ast$ \hyperlink{MusicRobot_8cpp_ad1eb662ee0491a9c564dfe81a726be1e}{q\-Robot\-Controller}}\label{MusicRobot_8cpp_ad1eb662ee0491a9c564dfe81a726be1e}
+
+\begin{DoxyCompactList}\small\item\em 机器人控制对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_af93bdeea46e68560290539e10622541d}{\hyperlink{classQRobotAction}{\-Q\-Robot\-Action} $\ast$ \hyperlink{MusicRobot_8cpp_af93bdeea46e68560290539e10622541d}{q\-Robot\-Action}}\label{MusicRobot_8cpp_af93bdeea46e68560290539e10622541d}
+
+\begin{DoxyCompactList}\small\item\em 机器人动作对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a2f6582880c7d5e6556f44a7375ed194f}{\hyperlink{classMusicPlayer}{\-Music\-Player} $\ast$ \hyperlink{MusicRobot_8cpp_a2f6582880c7d5e6556f44a7375ed194f}{music\-Player}}\label{MusicRobot_8cpp_a2f6582880c7d5e6556f44a7375ed194f}
+
+\begin{DoxyCompactList}\small\item\em 音乐播放对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a418f971fd57730fcc09bdb23410f667e}{\hyperlink{classAudio2Text}{\-Audio2\-Text} $\ast$ \hyperlink{MusicRobot_8cpp_a418f971fd57730fcc09bdb23410f667e}{audio2\-Text}}\label{MusicRobot_8cpp_a418f971fd57730fcc09bdb23410f667e}
+
+\begin{DoxyCompactList}\small\item\em 语音转换对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_aa1e49ba541586074ad55cb16107292ac}{\hyperlink{classPeopleDetection}{\-People\-Detection} $\ast$ \hyperlink{MusicRobot_8cpp_aa1e49ba541586074ad55cb16107292ac}{people\-Detection}}\label{MusicRobot_8cpp_aa1e49ba541586074ad55cb16107292ac}
+
+\begin{DoxyCompactList}\small\item\em 表情识别对象 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ae5b4204d98fff208ca2ec4cf0a405de8}{\hyperlink{classWavPlayer}{\-Wav\-Player} $\ast$ \hyperlink{MusicRobot_8cpp_ae5b4204d98fff208ca2ec4cf0a405de8}{wav\-Player}}\label{MusicRobot_8cpp_ae5b4204d98fff208ca2ec4cf0a405de8}
+
+\begin{DoxyCompactList}\small\item\em wav格式文件播放函数 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a131a899c583bb065e599c4a49bc0d457}{\hyperlink{classText2Audio}{\-Text2\-Audio} $\ast$ \hyperlink{MusicRobot_8cpp_a131a899c583bb065e599c4a49bc0d457}{text2\-Audio}}\label{MusicRobot_8cpp_a131a899c583bb065e599c4a49bc0d457}
+
+\begin{DoxyCompactList}\small\item\em 语音合成函数 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a364a046ec00e3c49cc17b36e8d490696}{\-Emotion \hyperlink{MusicRobot_8cpp_a364a046ec00e3c49cc17b36e8d490696}{emotion}}\label{MusicRobot_8cpp_a364a046ec00e3c49cc17b36e8d490696}
+
+\begin{DoxyCompactList}\small\item\em 表情 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a2bcf17ce37de5d43474c2239507d5025}{bool \hyperlink{MusicRobot_8cpp_a2bcf17ce37de5d43474c2239507d5025}{if\-Emotion\-Detected}}\label{MusicRobot_8cpp_a2bcf17ce37de5d43474c2239507d5025}
+
+\begin{DoxyCompactList}\small\item\em 标记拍照是否成功 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ac2fafcebf68ce460bdb6c196c34609ce}{bool \hyperlink{MusicRobot_8cpp_ac2fafcebf68ce460bdb6c196c34609ce}{if\-Detct\-Over}}\label{MusicRobot_8cpp_ac2fafcebf68ce460bdb6c196c34609ce}
+
+\begin{DoxyCompactList}\small\item\em 标记表情识别是否结束 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_ae7adaf5bb63237875ec9d509f3025766}{bool \hyperlink{MusicRobot_8cpp_ae7adaf5bb63237875ec9d509f3025766}{audio\-Buffer\-Over}}\label{MusicRobot_8cpp_ae7adaf5bb63237875ec9d509f3025766}
+
+\begin{DoxyCompactList}\small\item\em 标记录音缓存块是否已充满新数据` \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a24d1e81d152eb172f791c3560a6ba87f}{int \hyperlink{MusicRobot_8cpp_a24d1e81d152eb172f791c3560a6ba87f}{onsets\-Count}}\label{MusicRobot_8cpp_a24d1e81d152eb172f791c3560a6ba87f}
+
+\begin{DoxyCompactList}\small\item\em 标记onsets个数 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a2fa65f072e424f71bce87985332dc6cf}{clock\-\_\-t {\bfseries t\-Start}}\label{MusicRobot_8cpp_a2fa65f072e424f71bce87985332dc6cf}
+
+\item 
+\hypertarget{MusicRobot_8cpp_a4649d5cb7264c077b339a916d910a9d6}{clock\-\_\-t \hyperlink{MusicRobot_8cpp_a4649d5cb7264c077b339a916d910a9d6}{t\-End}}\label{MusicRobot_8cpp_a4649d5cb7264c077b339a916d910a9d6}
+
+\begin{DoxyCompactList}\small\item\em 计时器，用于计算节奏快慢 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a526672aa114d924407a1437624a718ca}{int \hyperlink{MusicRobot_8cpp_a526672aa114d924407a1437624a718ca}{speed\-Int}}\label{MusicRobot_8cpp_a526672aa114d924407a1437624a718ca}
+
+\begin{DoxyCompactList}\small\item\em 音乐速度 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a28dfc2cb236e70b45c084563dffd7f01}{bool \hyperlink{MusicRobot_8cpp_a28dfc2cb236e70b45c084563dffd7f01}{is\-Out\-Music\-Play}}\label{MusicRobot_8cpp_a28dfc2cb236e70b45c084563dffd7f01}
+
+\begin{DoxyCompactList}\small\item\em 标记是否是外部播放音乐 \end{DoxyCompactList}\item 
+\hypertarget{MusicRobot_8cpp_a370615e10b952cea244117cd4138ddf0}{int \hyperlink{MusicRobot_8cpp_a370615e10b952cea244117cd4138ddf0}{q\-Robot\-State} = 0}\label{MusicRobot_8cpp_a370615e10b952cea244117cd4138ddf0}
+
+\begin{DoxyCompactList}\small\item\em 当前状态，0为关闭，1为待机，2为自己播放音乐，3为外部播放音乐 \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{MusicRobot_8cpp_aaaf6f5cfb5fee46c04e25d734c9b146e}{command\-Char} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em 命令，0代表关机，1代表待机，2代表播放音乐，3代表外部音乐，4代表录像 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+主函数所在类 该cpp文件为主函数所在类，用于启动程序，及调度各线程，控制整体流程
+
+\begin{DoxyAuthor}{\-Author}
+孙正扬 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{MusicRobot_8cpp_aeca1452756ab46f9a9f57b8777218663}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!audio\-To\-Text@{audio\-To\-Text}}
+\index{audio\-To\-Text@{audio\-To\-Text}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{audio\-To\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf audio\-To\-Text} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$\&}]{out\-Text}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_aeca1452756ab46f9a9f57b8777218663}
+
+
+语音输入 
+
+接受语音，翻译成字符串
+
+调用该函数，开始录音，并进行语音转换
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em out\-Text} & 转换的结果的指针 \\
+\hline
+\end{DoxyParams}
+\hypertarget{MusicRobot_8cpp_a25d0add76cc067d8dc3411b238394ab0}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!close\-Robot@{close\-Robot}}
+\index{close\-Robot@{close\-Robot}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{close\-Robot}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf close\-Robot} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_a25d0add76cc067d8dc3411b238394ab0}
+
+
+关机函数 
+
+调用该函数，用以关机
+
+调用该函数，结束各个线程 \hypertarget{MusicRobot_8cpp_a9534dc25a345c47376b01d2b5b7e2e56}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!command\-Match@{command\-Match}}
+\index{command\-Match@{command\-Match}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{command\-Match}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf command\-Match} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$\&}]{text}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_a9534dc25a345c47376b01d2b5b7e2e56}
+
+
+命令匹配 
+
+用给定的字符串匹配已有命令
+
+用给定的字符串匹配已有命令，并返回
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em text} & 给定的字符串\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & 关机命令 \\
+\hline
+{\em 1} & 待机命令 \\
+\hline
+{\em 2} & 播放音乐命令 \\
+\hline
+{\em 3} & 听外部音乐命令 \\
+\hline
+{\em 4} & 录像命令 \\
+\hline
+{\em -\/1} & 指令错误（没有可以匹配的命令） \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{MusicRobot_8cpp_a05224a1b70c646aa4f88bcb69b224a54}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!select\-Song@{select\-Song}}
+\index{select\-Song@{select\-Song}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{select\-Song}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf select\-Song} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_a05224a1b70c646aa4f88bcb69b224a54}
+
+
+选歌函数 
+
+根据给定表情选择歌曲
+
+总共有7种表情，根据表情，选择相应的音乐 \hypertarget{MusicRobot_8cpp_ae591ec81359f58f1b2f41661f61a4732}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!set\-Speed@{set\-Speed}}
+\index{set\-Speed@{set\-Speed}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{set\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf set\-Speed} (
+\begin{DoxyParamCaption}
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_ae591ec81359f58f1b2f41661f61a4732}
+
+
+调节速度 
+
+用于调节动作的速度
+
+根据传入的时间调节速度，速度分三档，时间小于1600000us，是3档， 大于1600000us且小于2000000us是2档，大于2000000us是1档
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em onsets间隔时间} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{MusicRobot_8cpp_af6eac290a108f6f414e82147a031cc45}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!str\-Match@{str\-Match}}
+\index{str\-Match@{str\-Match}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{str\-Match}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf str\-Match} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$\&}]{str1, }
+\item[{char $\ast$\&}]{str2}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_af6eac290a108f6f414e82147a031cc45}
+
+
+字符串匹配 
+
+判断两字符串是否匹配
+
+判断字符串2是否是字符串1的字串
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em str1} & 要匹配的字符串1 \\
+\hline
+{\em str2} & 要匹配的字符串2\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em true} & 匹配 \\
+\hline
+{\em false} & 不匹配 \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{MusicRobot_8cpp_a56aea96c060de9fb8d829ce4ca3ab485}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!text\-To\-Audio@{text\-To\-Audio}}
+\index{text\-To\-Audio@{text\-To\-Audio}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{text\-To\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf text\-To\-Audio} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{text}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_a56aea96c060de9fb8d829ce4ca3ab485}
+
+
+语音合成函数 
+
+用于语音合成及播放
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em text} & 要转换为语音的字符串 \\
+\hline
+\end{DoxyParams}
+\hypertarget{MusicRobot_8cpp_aa9b96112787dadae4e12367390fc3d51}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!thread\-Run@{thread\-Run}}
+\index{thread\-Run@{thread\-Run}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{thread\-Run}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf thread\-Run} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{thread\-Id}
+\end{DoxyParamCaption}
+)}}\label{MusicRobot_8cpp_aa9b96112787dadae4e12367390fc3d51}
+
+
+线程函数 
+
+用于实现线程的动作
+
+线程的具体动作在此函数实现。总共有5个线程，线程0负责外部音乐录入； 线程1负责音乐节奏分析及调用动作；线程2负责语音录入、语音识别、歌曲 检索和歌曲播放；线程3用于视频录入及表情识别；线程4用于控制其他线程 及整体流程。 线程0和线程2不能同时进行，线程1只能对内部（线程0）或外部（线程1）1 种音乐进行处理
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em thread\-Id} & 线程id \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{MusicRobot_8cpp_aaaf6f5cfb5fee46c04e25d734c9b146e}{\index{\-Music\-Robot.\-cpp@{\-Music\-Robot.\-cpp}!command\-Char@{command\-Char}}
+\index{command\-Char@{command\-Char}!MusicRobot.cpp@{\-Music\-Robot.\-cpp}}
+\subsubsection[{command\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf command\-Char}\mbox{[}$\,$\mbox{]}}}\label{MusicRobot_8cpp_aaaf6f5cfb5fee46c04e25d734c9b146e}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+        "关机","待机", "播放音乐", "听音乐", "录像"
+}
+\end{DoxyCode}
+
+
+命令，0代表关机，1代表待机，2代表播放音乐，3代表外部音乐，4代表录像 
+

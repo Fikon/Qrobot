@@ -344,10 +344,155 @@ void QRobotAction::randAction15(){
 	}
 }
 
+//左翅膀单独挥动一下
+void QRobotAction::leftWingAction(){
+	switch(speed){
+		case 1: controller->leftWingDown(speed,8);break;
+		case 2: controller->leftWingDown(speed,6);break;
+		case 3: controller->leftWingDown(speed,4);break;
+	}
+}
+
+//右翅膀单独挥动一下
+void QRobotAction::rightWingAction(){
+	switch(speed){
+		case 1: controller->rightWingDown(speed,8);break;
+		case 2: controller->rightWingDown(speed,6);break;
+		case 3: controller->rightWingDown(speed,4);break;
+	}
+}
+
+//左右翅膀单独挥动一下
+void QRobotAction::lrWingAction(){
+	switch(speed){
+		case 1: controller->lrWingDown(speed,8);break;
+		case 2: controller->lrWingDown(speed,6);break;
+		case 3: controller->lrWingDown(speed,4);break;
+	}
+}
+
+//
+void QRobotAction::suit1Action1(){
+	switch(speed){
+		case 1: controller->leftWingDown(speed,10);break;
+		case 2: controller->leftWingDown(speed,10);break;
+		case 3: controller->leftWingDown(speed,10);break;
+	}
+}
+
+void QRobotAction::suit1Action2(){
+	switch(speed){
+		case 1: controller->rightWingDown(speed,10);break;
+		case 2: controller->rightWingDown(speed,10);break;
+		case 3: controller->rightWingDown(speed,10);break;
+	}	
+}
+
+void QRobotAction::suit1Action3(){
+	switch(speed){
+		case 1: controller->lrWingDown(speed,10);break;
+		case 2: controller->lrWingDown(speed,10);break;
+		case 3: controller->lrWingDown(speed,10);break;
+	}
+}
+
+//水平来回运动,中间
+void QRobotAction::suit1Action4(){
+
+	controller->horizontalHead(speed, 40);
+	suit1Action3();
+	usleep(15 * hInterval2);
+	controller->horizontalHead(speed,60);
+	usleep(20 * hInterval2);
+	controller->horizontalHead(speed,40);
+	usleep(15 * hInterval2);
+}
+
+//水平来回运动，左边
+void QRobotAction::suit1Action5(){
+	controller->horizontalHead(speed, 50);
+	suit1Action3();
+	usleep(15 * hInterval2);
+	controller->horizontalHead(speed,70);
+	usleep(20 * hInterval2);
+	controller->horizontalHead(speed,50);
+	usleep(15 * hInterval2);
+}
+
+//水平来回运动，右边
+void QRobotAction::suit1Action6(){
+	controller->horizontalHead(speed, 50);
+	suit1Action3();
+	usleep(15 * hInterval2);
+	controller->horizontalHead(speed,30);
+	usleep(20 * hInterval2);
+	controller->horizontalHead(speed,50);
+	usleep(15 * hInterval2);
+}
+
+//上下来回运动，右边
+void QRobotAction::suit1Action7(){
+	controller->verticalHead(speed, 10);
+	suit1Action3();
+	usleep(20 * vInterval2);
+	controller->verticalHead(speed,30);
+	usleep(20 * hInterval2);
+	controller->verticalHead(speed,10);
+	usleep(15 * hInterval2);
+}
+
+//上下来回运动，右边
+void QRobotAction::suit1Action8(){
+	controller->verticalHead(speed, 10);
+	usleep(20 * vInterval2);
+	controller->verticalHead(speed,30);
+	usleep(20 * hInterval2);
+	controller->verticalHead(speed,10);
+	usleep(15 * hInterval2);
+}
+
+
 //设置随机眼睛和胸部颜色
 void QRobotAction::setEyeAndColor(){
 	controller->setHeartColor(rand() % 256,rand() %256,rand()%256);
 	controller->setEyePic(rand() %50 +1,rand() % 255 + 1);
+}
+
+
+void QRobotAction::suit1RandAction(){
+	int temp = rand() % 9;
+	setEyeAndColor();
+	cout<<"**************temp = "<<temp<<"********"<<endl;
+	switch(temp){
+		case 0:
+			suit1Action1();
+			break;
+		case 1:
+			suit1Action2();
+			break;
+
+		case 2:
+			suit1Action3();
+			break;
+		case 3:
+			suit1Action4();
+			break;
+
+		case 4:
+			suit1Action5();
+			break;
+		case 5:
+			suit1Action6();
+			break;
+
+		case 6:
+			suit1Action7();
+			break;
+		case 7:
+			suit1Action8();
+			break;
+	}
+	setEyeAndColor();
 }
 
 //动作函数
@@ -413,4 +558,3 @@ void QRobotAction::dance(){
 			//眼睛表情和颜色
 	setEyeAndColor();
 }
-

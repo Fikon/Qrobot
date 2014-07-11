@@ -1,0 +1,47 @@
+\hypertarget{PeopleDetection_8h}{\section{\-People\-Detection.\-h \-File \-Reference}
+\label{PeopleDetection_8h}\index{\-People\-Detection.\-h@{\-People\-Detection.\-h}}
+}
+
+
+定义了一个可以进行通过表情判断用户心情的类\-People\-Detection 并且还定义了一个心情的枚举类型\-Emotion  
+
+
+{\ttfamily \#include \char`\"{}json/json.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Base64\-Codec.\-h\char`\"{}}\*
+{\ttfamily \#include $<$fstream$>$}\*
+{\ttfamily \#include $<$sstream$>$}\*
+{\ttfamily \#include $<$streambuf$>$}\*
+{\ttfamily \#include $<$opencv/highgui.\-h$>$}\*
+{\ttfamily \#include $<$curl/curl.\-h$>$}\*
+{\ttfamily \#include $<$cstdio$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$cstring$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPeopleDetection}{\-People\-Detection}
+\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Emotion} \{ \*
+{\bfseries happy}, 
+{\bfseries confused}, 
+{\bfseries calm}, 
+{\bfseries sad}, 
+\*
+{\bfseries angry}, 
+{\bfseries disgust}, 
+{\bfseries surprised}, 
+{\bfseries null}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+定义了一个可以进行通过表情判断用户心情的类\-People\-Detection 并且还定义了一个心情的枚举类型\-Emotion 首先开启一个摄像头程序进行视频流捕捉，等到用户对焦等操作完成之后 发出拍照指令，程序进行照片呢采集，之后交由表情识别模块进行心情判断
+
+\begin{DoxyAuthor}{\-Author}
+\href{mailto:kiky.jiang@gmail.com}{\tt kiky.\-jiang@gmail.\-com} 
+\end{DoxyAuthor}

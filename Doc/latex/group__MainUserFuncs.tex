@@ -1,0 +1,76 @@
+\hypertarget{group__MainUserFuncs}{\section{\-Main user functions}
+\label{group__MainUserFuncs}\index{\-Main user functions@{\-Main user functions}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{group__MainUserFuncs_ga291a43b39de09bc330b79ac8cc2a73ed}{onsetsds\-\_\-memneeded} (int odftype, size\-\_\-t fftsize, unsigned int medspan)
+\item 
+void \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float $\ast$odsdata, int fftformat, int odftype, size\-\_\-t fftsize, unsigned int medspan, float srate)
+\item 
+bool \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float $\ast$fftbuf)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{\index{\-Main user functions@{\-Main user functions}!onsetsds\-\_\-init@{onsetsds\-\_\-init}}
+\index{onsetsds\-\_\-init@{onsetsds\-\_\-init}!Main user functions@{\-Main user functions}}
+\subsubsection[{onsetsds\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf onsetsds\-\_\-init} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Onsets\-D\-S} $\ast$}]{ods, }
+\item[{float $\ast$}]{odsdata, }
+\item[{int}]{fftformat, }
+\item[{int}]{odftype, }
+\item[{size\-\_\-t}]{fftsize, }
+\item[{unsigned int}]{medspan, }
+\item[{float}]{srate}
+\end{DoxyParamCaption}
+)}}\label{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}
+\-Initialise the \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} struct and its associated memory, ready to detect onsets using the specified settings. \-Must be called before any call to \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process()}.
+
+\-Note\-: you can change the onset detection function type in mid-\/operation by calling \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init()} again, but because memory will be reset this will behave as if starting from scratch (rather than being aware of the past few frames of sound). \-Do not attempt to change the onset detection function in a more hacky way (e.\-g. fiddling with the struct) because memory is set up differently for each of the different \-O\-D\-Fs. 
+\begin{DoxyParams}{\-Parameters}
+{\em ods} & \-An instance of the \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} struct \\
+\hline
+{\em odsdata} & \-A pointer to the memory allocated, size given by \hyperlink{group__MainUserFuncs_ga291a43b39de09bc330b79ac8cc2a73ed}{onsetsds\-\_\-memneeded()}. \\
+\hline
+{\em fftformat} & \-Which format of \-F\-F\-T data is to be expected, chosen from \hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6}{onsetsds\-\_\-fft\-\_\-types} \\
+\hline
+{\em odftype} & \-Which onset detection function (\-O\-D\-F) you'll be using, chosen from \hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103}{onsetsds\-\_\-odf\-\_\-types} \\
+\hline
+{\em fftsize} & \-Size of \-F\-F\-T\-: 512 or 1024 is recommended. \\
+\hline
+{\em medspan} & \-The number of past frames that will be used for median calculation during triggering \\
+\hline
+{\em srate} & \-The sampling rate of the input audio \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MainUserFuncs_ga291a43b39de09bc330b79ac8cc2a73ed}{\index{\-Main user functions@{\-Main user functions}!onsetsds\-\_\-memneeded@{onsetsds\-\_\-memneeded}}
+\index{onsetsds\-\_\-memneeded@{onsetsds\-\_\-memneeded}!Main user functions@{\-Main user functions}}
+\subsubsection[{onsetsds\-\_\-memneeded}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t {\bf onsetsds\-\_\-memneeded} (
+\begin{DoxyParamCaption}
+\item[{int}]{odftype, }
+\item[{size\-\_\-t}]{fftsize, }
+\item[{unsigned int}]{medspan}
+\end{DoxyParamCaption}
+)}}\label{group__MainUserFuncs_ga291a43b39de09bc330b79ac8cc2a73ed}
+\-Determine how many bytes of memory must be allocated (e.\-g. using malloc) to accompany the \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} struct, operating using the specified settings (used to store part-\/processed \-F\-F\-T data etc). \-The user must call this, and then allocate the memory, \-B\-E\-F\-O\-R\-E calling \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init()}. 
+\begin{DoxyParams}{\-Parameters}
+{\em odftype} & \-Which onset detection function (\-O\-D\-F) you'll be using, chosen from \hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103}{onsetsds\-\_\-odf\-\_\-types} \\
+\hline
+{\em fftsize} & \-Size of \-F\-F\-T\-: 512 is recommended. \\
+\hline
+{\em medspan} & \-The number of past frames that will be used for median calculation during triggering \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{\index{\-Main user functions@{\-Main user functions}!onsetsds\-\_\-process@{onsetsds\-\_\-process}}
+\index{onsetsds\-\_\-process@{onsetsds\-\_\-process}!Main user functions@{\-Main user functions}}
+\subsubsection[{onsetsds\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf onsetsds\-\_\-process} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Onsets\-D\-S} $\ast$}]{ods, }
+\item[{float $\ast$}]{fftbuf}
+\end{DoxyParamCaption}
+)}}\label{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}
+\-Process a single \-F\-F\-T data frame in the audio signal. \-Note that processing assumes that each call to \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process()} is on a subsequent frame in the same audio stream -\/ to handle multiple streams you must use separate \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} structs and memory!
+
+\-This function's main purpose is to call some of the library's other functions, in the expected sequence. 

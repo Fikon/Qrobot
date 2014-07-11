@@ -357,7 +357,10 @@ void * threadRun( void *threadId ){
 					setSpeed((int)(tEnd-tStart));
 					//setSpeed(1700000);
 					qRobotAction->dance();
+					//qRobotController->verticalHead(1, 40);
+					//sleep(1);
 					wingMovement();
+					//qRobotAction->suit1RandAction();
 					tStart = clock();
 					onsetsCount = 0;
 					//printf("Y\n");
@@ -504,6 +507,7 @@ void * threadRun( void *threadId ){
 							delete audioController;
 							audioController = NULL;
 						}
+						printf("正在打开设备...\n");
 						audioController = new AudioController( AUDIO_NAME, FRAME_NUM, SAMPLE_RATE, 1);
 						pthread_cond_signal(&cond0);
 						isOutMusicPlay = true;

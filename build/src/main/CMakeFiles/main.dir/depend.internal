@@ -86,8 +86,8 @@ src/main/CMakeFiles/main.dir/PeopleDetection.cpp.o
  ../include/../include/json/writer.h
  /home/szy/文档/CMake_Project/src/main/PeopleDetection.cpp
 src/main/CMakeFiles/main.dir/QRobotAction.cpp.o
- ../include/../include/../include/QRobotController.h
  ../include/../include/QRobotAction.h
+ ../include/../include/QRobotController.h
  /home/szy/文档/CMake_Project/src/main/QRobotAction.cpp
 src/main/CMakeFiles/main.dir/QRobotController.cpp.o
  ../include/../include/QRobotController.h

@@ -1,0 +1,55 @@
+\hypertarget{group__OtherFuncs}{\section{\-Other functions, not typically called by users}
+\label{group__OtherFuncs}\index{\-Other functions, not typically called by users@{\-Other functions, not typically called by users}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__OtherFuncs_ga8811ec89c757d454c11fd607fc8d86d3}{onsetsds\-\_\-loadframe} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float $\ast$fftbuf)
+\item 
+void \hyperlink{group__OtherFuncs_ga7083e5dd6cb7cd9f6159d2e05b1ea9f4}{onsetsds\-\_\-whiten} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods)
+\item 
+void \hyperlink{group__OtherFuncs_gad91b8103abc696c675316b409160e87e}{onsetsds\-\_\-odf} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods)
+\item 
+void \hyperlink{group__OtherFuncs_ga75da086395c01242382a2f8d5a38dd7d}{onsetsds\-\_\-detect} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__OtherFuncs_ga75da086395c01242382a2f8d5a38dd7d}{\index{\-Other functions, not typically called by users@{\-Other functions, not typically called by users}!onsetsds\-\_\-detect@{onsetsds\-\_\-detect}}
+\index{onsetsds\-\_\-detect@{onsetsds\-\_\-detect}!Other functions, not typically called by users@{\-Other functions, not typically called by users}}
+\subsubsection[{onsetsds\-\_\-detect}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf onsetsds\-\_\-detect} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Onsets\-D\-S} $\ast$}]{ods}
+\end{DoxyParamCaption}
+)}}\label{group__OtherFuncs_ga75da086395c01242382a2f8d5a38dd7d}
+\-Detects salient peaks in \-Onset \-Detection \-Function by removing the median, then thresholding. \-Afterwards, the member ods.\-detected will indicate whether or not an onset was detected.
+
+\-Not typically called directly by users since \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process()} calls this. \hypertarget{group__OtherFuncs_ga8811ec89c757d454c11fd607fc8d86d3}{\index{\-Other functions, not typically called by users@{\-Other functions, not typically called by users}!onsetsds\-\_\-loadframe@{onsetsds\-\_\-loadframe}}
+\index{onsetsds\-\_\-loadframe@{onsetsds\-\_\-loadframe}!Other functions, not typically called by users@{\-Other functions, not typically called by users}}
+\subsubsection[{onsetsds\-\_\-loadframe}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf onsetsds\-\_\-loadframe} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Onsets\-D\-S} $\ast$}]{ods, }
+\item[{float $\ast$}]{fftbuf}
+\end{DoxyParamCaption}
+)}}\label{group__OtherFuncs_ga8811ec89c757d454c11fd607fc8d86d3}
+\-Load the current frame of \-F\-F\-T data into the \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} struct.
+
+\-Not typically called directly by users since \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process()} calls this. \hypertarget{group__OtherFuncs_gad91b8103abc696c675316b409160e87e}{\index{\-Other functions, not typically called by users@{\-Other functions, not typically called by users}!onsetsds\-\_\-odf@{onsetsds\-\_\-odf}}
+\index{onsetsds\-\_\-odf@{onsetsds\-\_\-odf}!Other functions, not typically called by users@{\-Other functions, not typically called by users}}
+\subsubsection[{onsetsds\-\_\-odf}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf onsetsds\-\_\-odf} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Onsets\-D\-S} $\ast$}]{ods}
+\end{DoxyParamCaption}
+)}}\label{group__OtherFuncs_gad91b8103abc696c675316b409160e87e}
+\-Calculate the \-Onset \-Detection \-Function (includes scaling \-O\-D\-F outputs to similar range)
+
+\-Not typically called directly by users since \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process()} calls this. \hypertarget{group__OtherFuncs_ga7083e5dd6cb7cd9f6159d2e05b1ea9f4}{\index{\-Other functions, not typically called by users@{\-Other functions, not typically called by users}!onsetsds\-\_\-whiten@{onsetsds\-\_\-whiten}}
+\index{onsetsds\-\_\-whiten@{onsetsds\-\_\-whiten}!Other functions, not typically called by users@{\-Other functions, not typically called by users}}
+\subsubsection[{onsetsds\-\_\-whiten}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf onsetsds\-\_\-whiten} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Onsets\-D\-S} $\ast$}]{ods}
+\end{DoxyParamCaption}
+)}}\label{group__OtherFuncs_ga7083e5dd6cb7cd9f6159d2e05b1ea9f4}
+\-Apply adaptive whitening to the \-F\-F\-T data in the \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} struct.
+
+\-Not typically called directly by users since \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process()} calls this. 

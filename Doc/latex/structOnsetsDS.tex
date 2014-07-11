@@ -1,0 +1,117 @@
+\hypertarget{structOnsetsDS}{\section{\-Onsets\-D\-S \-Struct \-Reference}
+\label{structOnsetsDS}\index{\-Onsets\-D\-S@{\-Onsets\-D\-S}}
+}
+
+
+\-The main data structure for the onset detection routine.  
+
+
+
+
+{\ttfamily \#include $<$onsetsds.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float $\ast$ \hyperlink{structOnsetsDS_aba9357b81e5bbaf2f5eec0b5cd6341f2}{data}
+\item 
+\hypertarget{structOnsetsDS_a7a040fc1d6ef6908f887a102ad628785}{float $\ast$ \hyperlink{structOnsetsDS_a7a040fc1d6ef6908f887a102ad628785}{psp}}\label{structOnsetsDS_a7a040fc1d6ef6908f887a102ad628785}
+
+\begin{DoxyCompactList}\small\item\em \-Peak \-Spectral \-Profile -\/ size is numbins+2, data is stored in order dc through to nyquist. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a1c971622bde640c9139502da9e68fde4}{float $\ast$ {\bfseries odfvals}}\label{structOnsetsDS_a1c971622bde640c9139502da9e68fde4}
+
+\item 
+\hypertarget{structOnsetsDS_aeddae4d94ea3637b33354ccba130bac2}{float $\ast$ {\bfseries sortbuf}}\label{structOnsetsDS_aeddae4d94ea3637b33354ccba130bac2}
+
+\item 
+\hypertarget{structOnsetsDS_afe1ac11c0c8bbc98f996ef1d2c6dd441}{float $\ast$ {\bfseries other}}\label{structOnsetsDS_afe1ac11c0c8bbc98f996ef1d2c6dd441}
+
+\item 
+\hypertarget{structOnsetsDS_aba2a1f38cab17582cb6745f33643415e}{\hyperlink{structOdsPolarBuf}{\-Ods\-Polar\-Buf} $\ast$ {\bfseries curr}}\label{structOnsetsDS_aba2a1f38cab17582cb6745f33643415e}
+
+\item 
+\hypertarget{structOnsetsDS_ae4289889fff68fa8abddd17a6d82d203}{float \hyperlink{structOnsetsDS_ae4289889fff68fa8abddd17a6d82d203}{srate}}\label{structOnsetsDS_ae4289889fff68fa8abddd17a6d82d203}
+
+\begin{DoxyCompactList}\small\item\em \-The sampling rate of the input audio. \-Set by \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init()} \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_ac2df5ff5d39f4f467d0a0a694e89512a}{float \hyperlink{structOnsetsDS_ac2df5ff5d39f4f467d0a0a694e89512a}{relaxtime}}\label{structOnsetsDS_ac2df5ff5d39f4f467d0a0a694e89512a}
+
+\begin{DoxyCompactList}\small\item\em \-Do \-N\-O\-T set this directly. \-Use \hyperlink{group__LessCommonFuncs_gac1172605b8b821d0eff6cc1efdd8ce6c}{onsetsds\-\_\-setrelax()} which will also update relaxcoef. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a685d45e4d30195d8c14447f5da7af85e}{float \hyperlink{structOnsetsDS_a685d45e4d30195d8c14447f5da7af85e}{relaxcoef}}\label{structOnsetsDS_a685d45e4d30195d8c14447f5da7af85e}
+
+\begin{DoxyCompactList}\small\item\em \-Relaxation coefficient (memory coefficient). \-See also \hyperlink{group__LessCommonFuncs_gac1172605b8b821d0eff6cc1efdd8ce6c}{onsetsds\-\_\-setrelax()} \end{DoxyCompactList}\item 
+float \hyperlink{structOnsetsDS_a0c4f6f0751dca3301396169571a5e702}{floor}
+\item 
+float \hyperlink{structOnsetsDS_ab42f8cdea87d089218e078442475edb0}{odfparam}
+\item 
+\hypertarget{structOnsetsDS_aba3456b119c5295c12ccb1a02d4861f9}{float \hyperlink{structOnsetsDS_aba3456b119c5295c12ccb1a02d4861f9}{normfactor}}\label{structOnsetsDS_aba3456b119c5295c12ccb1a02d4861f9}
+
+\begin{DoxyCompactList}\small\item\em \-Value used internally to scale \-O\-D\-F value according to the \-F\-F\-T frame size. \-Automatically set by \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init()} \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_af4c17041fbbb57bcf19995c77e843e0d}{float {\bfseries odfvalpost}}\label{structOnsetsDS_af4c17041fbbb57bcf19995c77e843e0d}
+
+\item 
+\hypertarget{structOnsetsDS_a25445d9e1285153b591327cfa6abc3ad}{float {\bfseries odfvalpostprev}}\label{structOnsetsDS_a25445d9e1285153b591327cfa6abc3ad}
+
+\item 
+float \hyperlink{structOnsetsDS_a9303e0d0a909db24d327259ec4317e98}{thresh}
+\item 
+\hypertarget{structOnsetsDS_afd206f369df402dbb4cee05a30dc3ef5}{int \hyperlink{structOnsetsDS_afd206f369df402dbb4cee05a30dc3ef5}{odftype}}\label{structOnsetsDS_afd206f369df402dbb4cee05a30dc3ef5}
+
+\begin{DoxyCompactList}\small\item\em \-Choose from \hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103}{onsetsds\-\_\-odf\-\_\-types}. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a4d9a9f9c1bd06f39ed30d92b114b3c9d}{int \hyperlink{structOnsetsDS_a4d9a9f9c1bd06f39ed30d92b114b3c9d}{whtype}}\label{structOnsetsDS_a4d9a9f9c1bd06f39ed30d92b114b3c9d}
+
+\begin{DoxyCompactList}\small\item\em \-Choose from \hyperlink{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5e}{onsetsds\-\_\-wh\-\_\-types}. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a6af1a5dc0c576eae89ff5686d5164a5c}{int \hyperlink{structOnsetsDS_a6af1a5dc0c576eae89ff5686d5164a5c}{fftformat}}\label{structOnsetsDS_a6af1a5dc0c576eae89ff5686d5164a5c}
+
+\begin{DoxyCompactList}\small\item\em \-Choose from \hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6}{onsetsds\-\_\-fft\-\_\-types}. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a3e865aeaa9a1e056fab65a1db9619f9d}{bool \hyperlink{structOnsetsDS_a3e865aeaa9a1e056fab65a1db9619f9d}{whiten}}\label{structOnsetsDS_a3e865aeaa9a1e056fab65a1db9619f9d}
+
+\begin{DoxyCompactList}\small\item\em \-Whether to apply whitening -\/ \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init()} decides this on your behalf. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a6265c6e1d995aefc3e242bb717796c09}{bool \hyperlink{structOnsetsDS_a6265c6e1d995aefc3e242bb717796c09}{detected}}\label{structOnsetsDS_a6265c6e1d995aefc3e242bb717796c09}
+
+\begin{DoxyCompactList}\small\item\em \-Output val -\/ true if onset detected in curr frame. \end{DoxyCompactList}\item 
+bool \hyperlink{structOnsetsDS_a9570cf2143c45ca1651ebbe81f21199e}{logmags}
+\item 
+\hypertarget{structOnsetsDS_a926db7204c2e92f502f5b0c4d2deb0a2}{bool \hyperlink{structOnsetsDS_a926db7204c2e92f502f5b0c4d2deb0a2}{med\-\_\-odd}}\label{structOnsetsDS_a926db7204c2e92f502f5b0c4d2deb0a2}
+
+\begin{DoxyCompactList}\small\item\em \-Whether median span is odd or not (used internally) \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_a1b0ed838be9b25e8b45e3552b80da3ee}{unsigned int \hyperlink{structOnsetsDS_a1b0ed838be9b25e8b45e3552b80da3ee}{medspan}}\label{structOnsetsDS_a1b0ed838be9b25e8b45e3552b80da3ee}
+
+\begin{DoxyCompactList}\small\item\em \-Number of frames used in median calculation. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_ac90cd3d9453c1daec926ddd2e96e9f91}{unsigned int \hyperlink{structOnsetsDS_ac90cd3d9453c1daec926ddd2e96e9f91}{mingap}}\label{structOnsetsDS_ac90cd3d9453c1daec926ddd2e96e9f91}
+
+\begin{DoxyCompactList}\small\item\em \-Size of enforced gap between detections, measured in \-F\-F\-T frames. \end{DoxyCompactList}\item 
+\hypertarget{structOnsetsDS_af5a60a5474a4bce7eafb563b7cd02783}{unsigned int {\bfseries gapleft}}\label{structOnsetsDS_af5a60a5474a4bce7eafb563b7cd02783}
+
+\item 
+\hypertarget{structOnsetsDS_aa6792213af79462ed2480bb9a0415812}{size\-\_\-t {\bfseries fftsize}}\label{structOnsetsDS_aa6792213af79462ed2480bb9a0415812}
+
+\item 
+\hypertarget{structOnsetsDS_a1794e50d716ffbae60b1f7a653b9fb35}{size\-\_\-t {\bfseries numbins}}\label{structOnsetsDS_a1794e50d716ffbae60b1f7a653b9fb35}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The main data structure for the onset detection routine. 
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structOnsetsDS_aba9357b81e5bbaf2f5eec0b5cd6341f2}{\index{\-Onsets\-D\-S@{\-Onsets\-D\-S}!data@{data}}
+\index{data@{data}!OnsetsDS@{\-Onsets\-D\-S}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ {\bf \-Onsets\-D\-S\-::data}}}\label{structOnsetsDS_aba9357b81e5bbaf2f5eec0b5cd6341f2}
+\char`\"{}data\char`\"{} is a pointer to the memory that must be \-E\-X\-T\-E\-R\-N\-A\-L\-L\-Y allocated. \-Other pointers will point to locations within this memory. \hypertarget{structOnsetsDS_a0c4f6f0751dca3301396169571a5e702}{\index{\-Onsets\-D\-S@{\-Onsets\-D\-S}!floor@{floor}}
+\index{floor@{floor}!OnsetsDS@{\-Onsets\-D\-S}}
+\subsubsection[{floor}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Onsets\-D\-S\-::floor}}}\label{structOnsetsDS_a0c4f6f0751dca3301396169571a5e702}
+floor -\/ the lowest value that a \-P\-S\-P magnitude can take. \hypertarget{structOnsetsDS_a9570cf2143c45ca1651ebbe81f21199e}{\index{\-Onsets\-D\-S@{\-Onsets\-D\-S}!logmags@{logmags}}
+\index{logmags@{logmags}!OnsetsDS@{\-Onsets\-D\-S}}
+\subsubsection[{logmags}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Onsets\-D\-S\-::logmags}}}\label{structOnsetsDS_a9570cf2143c45ca1651ebbe81f21199e}
+\-N\-O\-T \-Y\-E\-T \-U\-S\-E\-D\-: \-Whether to convert magnitudes to log domain before processing. \-This is done as follows\-: \-Magnitudes below a log-\/lower-\/limit threshold (\-O\-D\-S\-\_\-\-L\-O\-G\-\_\-\-L\-O\-W\-E\-R\-\_\-\-L\-I\-M\-I\-T) are pushed up to that threshold (to avoid log(0) infinity problems), then the log is taken. \-The values are re-\/scaled to a similar range as the linear-\/domain values (assumed to lie between zero and approximately one) by subtracting log(\-O\-D\-S\-\_\-\-L\-O\-G\-\_\-\-L\-O\-W\-E\-R\-\_\-\-L\-I\-M\-I\-T) and then dividing by abs(log(\-O\-D\-S\-\_\-\-L\-O\-G\-\_\-\-L\-O\-W\-E\-R\-\_\-\-L\-I\-M\-I\-T)). \hypertarget{structOnsetsDS_ab42f8cdea87d089218e078442475edb0}{\index{\-Onsets\-D\-S@{\-Onsets\-D\-S}!odfparam@{odfparam}}
+\index{odfparam@{odfparam}!OnsetsDS@{\-Onsets\-D\-S}}
+\subsubsection[{odfparam}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Onsets\-D\-S\-::odfparam}}}\label{structOnsetsDS_ab42f8cdea87d089218e078442475edb0}
+\-A parameter for the \-O\-D\-F. \-For most this is a magnitude threshold for a single bin to be considered; but for \hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ad6e3eef08abfa4438b15c7e4844101a4}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L} it is the \char`\"{}epsilon\char`\"{} parameter. \hypertarget{structOnsetsDS_a9303e0d0a909db24d327259ec4317e98}{\index{\-Onsets\-D\-S@{\-Onsets\-D\-S}!thresh@{thresh}}
+\index{thresh@{thresh}!OnsetsDS@{\-Onsets\-D\-S}}
+\subsubsection[{thresh}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Onsets\-D\-S\-::thresh}}}\label{structOnsetsDS_a9303e0d0a909db24d327259ec4317e98}
+\-Threshold (of \-O\-D\-F value, after median processing) for detection. \-Values between 0 and 1 are expected, but outside this range may sometimes be appropriate too. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{onsetsds_8h}{onsetsds.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,172 @@
+\hypertarget{onsetsds_8h}{\section{onsetsds.\-h \-File \-Reference}
+\label{onsetsds_8h}\index{onsetsds.\-h@{onsetsds.\-h}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structOdsPolarBin}{\-Ods\-Polar\-Bin}
+\item 
+struct \hyperlink{structOdsPolarBuf}{\-Ods\-Polar\-Buf}
+\item 
+struct \hyperlink{structOnsetsDS}{\-Onsets\-D\-S}
+\begin{DoxyCompactList}\small\item\em \-The main data structure for the onset detection routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{onsetsds_8h_a02ec4faa763634e28ddd87f250863d3d}{\#define {\bfseries ods\-\_\-log1}~-\/2.\-30258509}\label{onsetsds_8h_a02ec4faa763634e28ddd87f250863d3d}
+
+\item 
+\hypertarget{onsetsds_8h_a598a3330b3c21701223ee0ca14316eca}{\#define {\bfseries \-P\-I}~3.\-1415926535898f}\label{onsetsds_8h_a598a3330b3c21701223ee0ca14316eca}
+
+\item 
+\hypertarget{onsetsds_8h_abe7a41da32df5dca488038bd87a51df2}{\#define {\bfseries \-M\-I\-N\-U\-S\-P\-I}~-\/3.\-1415926535898f}\label{onsetsds_8h_abe7a41da32df5dca488038bd87a51df2}
+
+\item 
+\hypertarget{onsetsds_8h_a4912c64aec0c943b7985db6cb61ff83a}{\#define {\bfseries \-T\-W\-O\-P\-I}~6.\-28318530717952646f}\label{onsetsds_8h_a4912c64aec0c943b7985db6cb61ff83a}
+
+\item 
+\hypertarget{onsetsds_8h_a42177ad937b6de334f376c039189e067}{\#define {\bfseries \-I\-N\-V\-\_\-\-T\-W\-O\-P\-I}~0.\-1591549430919f}\label{onsetsds_8h_a42177ad937b6de334f376c039189e067}
+
+\item 
+\hypertarget{onsetsds_8h_a625aebb9515c05ccde6c0f7a98862001}{\#define {\bfseries ods\-\_\-abs}(a)~((a)$<$0? -\/(a) \-: (a))}\label{onsetsds_8h_a625aebb9515c05ccde6c0f7a98862001}
+
+\item 
+\hypertarget{onsetsds_8h_a01269b3af7784125d31896e6d6aa6f62}{\#define {\bfseries ods\-\_\-max}(a, b)~(((a) $>$ (b)) ? (a) \-: (b))}\label{onsetsds_8h_a01269b3af7784125d31896e6d6aa6f62}
+
+\item 
+\hypertarget{onsetsds_8h_ab70957c8f045edfc684442c2e6a90f68}{\#define {\bfseries ods\-\_\-min}(a, b)~(((a) $<$ (b)) ? (a) \-: (b))}\label{onsetsds_8h_ab70957c8f045edfc684442c2e6a90f68}
+
+\item 
+\hypertarget{onsetsds_8h_ac3eea6e672fb1945b12ad6107a314e9b}{\#define {\bfseries \-O\-D\-S\-\_\-\-L\-O\-G\-\_\-\-L\-O\-W\-E\-R\-\_\-\-L\-I\-M\-I\-T}~2e-\/42}\label{onsetsds_8h_ac3eea6e672fb1945b12ad6107a314e9b}
+
+\item 
+\hypertarget{onsetsds_8h_a013d64c6b588603a2429ad23be4ed8e5}{\#define {\bfseries \-O\-D\-S\-\_\-\-L\-O\-G\-O\-F\-\_\-\-L\-O\-G\-\_\-\-L\-O\-W\-E\-R\-\_\-\-L\-I\-M\-I\-T}~-\/96.\-0154267}\label{onsetsds_8h_a013d64c6b588603a2429ad23be4ed8e5}
+
+\item 
+\hypertarget{onsetsds_8h_a6d9789998632947c647e5fbecf271814}{\#define {\bfseries \-O\-D\-S\-\_\-\-A\-B\-S\-I\-N\-V\-O\-F\-\_\-\-L\-O\-G\-O\-F\-\_\-\-L\-O\-G\-\_\-\-L\-O\-W\-E\-R\-\_\-\-L\-I\-M\-I\-T}~0.\-010414993}\label{onsetsds_8h_a6d9789998632947c647e5fbecf271814}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{onsetsds_8h_ad1eccb3d7e6fb5c6d9cc1ca418e99c2e}{typedef struct \hyperlink{structOdsPolarBin}{\-Ods\-Polar\-Bin} {\bfseries \-Ods\-Polar\-Bin}}\label{onsetsds_8h_ad1eccb3d7e6fb5c6d9cc1ca418e99c2e}
+
+\item 
+\hypertarget{onsetsds_8h_a59456c8c7cf63f25215be74b77bb2bcc}{typedef struct \hyperlink{structOdsPolarBuf}{\-Ods\-Polar\-Buf} {\bfseries \-Ods\-Polar\-Buf}}\label{onsetsds_8h_a59456c8c7cf63f25215be74b77bb2bcc}
+
+\item 
+\hypertarget{onsetsds_8h_a02d6cd15a6e2588a0f04e61d09f3b244}{typedef struct \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} \hyperlink{onsetsds_8h_a02d6cd15a6e2588a0f04e61d09f3b244}{\-Onsets\-D\-S}}\label{onsetsds_8h_a02d6cd15a6e2588a0f04e61d09f3b244}
+
+\begin{DoxyCompactList}\small\item\em \-The main data structure for the onset detection routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6}{onsetsds\-\_\-fft\-\_\-types} \{ \hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6acb4f414150d92749e06084dccd11dee1}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-C\-O\-M\-P\-L\-E\-X}, 
+\hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ab9f1fd9c2169f570ad854e649b9fadda}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-P\-O\-L\-A\-R}, 
+\hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ae094ba719f8b041e070869574a891ca4}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-H\-C}, 
+\hyperlink{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ac1b91ce2b129bc2dfdb2c64cfcb77800}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-R2\-C}
+ \}
+\item 
+enum \hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103}{onsetsds\-\_\-odf\-\_\-types} \{ \*
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a2ca27c14a62f7b7ccb00efeb0103cfcd}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-O\-W\-E\-R}, 
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103aa867c87857874ce9a52ee285670df615}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-A\-G\-S\-U\-M}, 
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a6c3ed813e3715f9603517c1ac0f2d24f}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-C\-O\-M\-P\-L\-E\-X}, 
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a530686b979ca46c043d82079784be8a0}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-R\-C\-O\-M\-P\-L\-E\-X}, 
+\*
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a739f239951a7899b5ad2b08fe705c1f8}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-H\-A\-S\-E}, 
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ade8e93ad33b75d6f9e92414d3f521cee}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-W\-P\-H\-A\-S\-E}, 
+\hyperlink{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ad6e3eef08abfa4438b15c7e4844101a4}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L}
+ \}
+\item 
+enum \hyperlink{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5e}{onsetsds\-\_\-wh\-\_\-types} \{ \hyperlink{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5ea896afc9adb942090ebde87c9de431d3a}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-N\-E}, 
+\hyperlink{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5eab5fe55098c92fa8c7857b1bcbd66eb41}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-A\-D\-A\-P\-T\-\_\-\-M\-A\-X1}, 
+\hyperlink{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5eafc23eff1ef833526e92403e4c134d4a0}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-A\-X}, 
+\hyperlink{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5ea0879580cb22f8f4ace5f60dd7fabafa1}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-E\-A\-N}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{group__MainUserFuncs_ga291a43b39de09bc330b79ac8cc2a73ed}{onsetsds\-\_\-memneeded} (int odftype, size\-\_\-t fftsize, unsigned int medspan)
+\item 
+void \hyperlink{group__MainUserFuncs_gab23ae57d91a4ea14c4603243c84a7ed6}{onsetsds\-\_\-init} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float $\ast$odsdata, int fftformat, int odftype, size\-\_\-t fftsize, unsigned int medspan, float srate)
+\item 
+bool \hyperlink{group__MainUserFuncs_gad1ec6c483b0462ec49ce5f64672cb48d}{onsetsds\-\_\-process} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float $\ast$fftbuf)
+\item 
+void \hyperlink{group__LessCommonFuncs_gac1172605b8b821d0eff6cc1efdd8ce6c}{onsetsds\-\_\-setrelax} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float time, size\-\_\-t hopsize)
+\item 
+void \hyperlink{group__OtherFuncs_ga8811ec89c757d454c11fd607fc8d86d3}{onsetsds\-\_\-loadframe} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods, float $\ast$fftbuf)
+\item 
+void \hyperlink{group__OtherFuncs_ga7083e5dd6cb7cd9f6159d2e05b1ea9f4}{onsetsds\-\_\-whiten} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods)
+\item 
+void \hyperlink{group__OtherFuncs_gad91b8103abc696c675316b409160e87e}{onsetsds\-\_\-odf} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods)
+\item 
+void \hyperlink{group__OtherFuncs_ga75da086395c01242382a2f8d5a38dd7d}{onsetsds\-\_\-detect} (\hyperlink{structOnsetsDS}{\-Onsets\-D\-S} $\ast$ods)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6}{\index{onsetsds.\-h@{onsetsds.\-h}!onsetsds\-\_\-fft\-\_\-types@{onsetsds\-\_\-fft\-\_\-types}}
+\index{onsetsds\-\_\-fft\-\_\-types@{onsetsds\-\_\-fft\-\_\-types}!onsetsds.h@{onsetsds.\-h}}
+\subsubsection[{onsetsds\-\_\-fft\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf onsetsds\-\_\-fft\-\_\-types}}}\label{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6}
+\-Types of incoming \-F\-F\-T data format. \hyperlink{structOnsetsDS}{\-Onsets\-D\-S} needs to know where the \-F\-F\-T data comes from in order to interpret it correctly. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-C\-O\-M\-P\-L\-E\-X@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-C\-O\-M\-P\-L\-E\-X}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-C\-O\-M\-P\-L\-E\-X@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-C\-O\-M\-P\-L\-E\-X}}\item[{\em 
+\hypertarget{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6acb4f414150d92749e06084dccd11dee1}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-C\-O\-M\-P\-L\-E\-X}\label{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6acb4f414150d92749e06084dccd11dee1}
+}]\-Super\-Collider, cartesian co-\/ords (\char`\"{}\-S\-C\-Complex\-Buf\char`\"{}) \mbox{[}dc, nyq, real\mbox{[}1\mbox{]}, imag\mbox{[}1\mbox{]}, real\mbox{[}2\mbox{]}, imag\mbox{[}2\mbox{]}...\mbox{]} -\/ \-N\-B it's more efficient to provide polar data from \-S\-C. \index{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-P\-O\-L\-A\-R@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-P\-O\-L\-A\-R}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-P\-O\-L\-A\-R@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-P\-O\-L\-A\-R}}\item[{\em 
+\hypertarget{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ab9f1fd9c2169f570ad854e649b9fadda}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-S\-C3\-\_\-\-P\-O\-L\-A\-R}\label{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ab9f1fd9c2169f570ad854e649b9fadda}
+}]\-Super\-Collider, polar co-\/ords (\char`\"{}\-S\-C\-Polar\-Buf\char`\"{}) \mbox{[}dc, nyq, mag\mbox{[}1\mbox{]}, phase\mbox{[}1\mbox{]}, mag\mbox{[}2\mbox{]}, phase\mbox{[}2\mbox{]}...\mbox{]}. \index{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-H\-C@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-H\-C}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-H\-C@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-H\-C}}\item[{\em 
+\hypertarget{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ae094ba719f8b041e070869574a891ca4}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-H\-C}\label{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ae094ba719f8b041e070869574a891ca4}
+}]\-F\-F\-T\-W \href{http://www.fftw.org/fftw3_doc/The-Halfcomplex_002dformat-DFT.html}{\tt \char`\"{}halfcomplex\char`\"{}} format -\/ \mbox{[}dc, real\mbox{[}1\mbox{]}, real\mbox{[}2\mbox{]} ... nyq, imag\mbox{[}nyq-\/1\mbox{]} ... imag\mbox{[}1\mbox{]}\mbox{]}. \index{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-R2\-C@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-R2\-C}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-R2\-C@{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-R2\-C}}\item[{\em 
+\hypertarget{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ac1b91ce2b129bc2dfdb2c64cfcb77800}{\-O\-D\-S\-\_\-\-F\-F\-T\-\_\-\-F\-F\-T\-W3\-\_\-\-R2\-C}\label{onsetsds_8h_aac4a978d7a67d6e681d666b4c2c10ff6ac1b91ce2b129bc2dfdb2c64cfcb77800}
+}]\-F\-F\-T\-W regular format, typically produced using \href{http://www.fftw.org/fftw3_doc/One_002dDimensional-DFTs-of-Real-Data.html#One_002dDimensional-DFTs-of-Real-Data}{\tt real-\/to-\/complex} transform. \end{description}
+\end{Desc}
+
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103}{\index{onsetsds.\-h@{onsetsds.\-h}!onsetsds\-\_\-odf\-\_\-types@{onsetsds\-\_\-odf\-\_\-types}}
+\index{onsetsds\-\_\-odf\-\_\-types@{onsetsds\-\_\-odf\-\_\-types}!onsetsds.h@{onsetsds.\-h}}
+\subsubsection[{onsetsds\-\_\-odf\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf onsetsds\-\_\-odf\-\_\-types}}}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103}
+\-Types of onset detection function \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-O\-W\-E\-R@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-O\-W\-E\-R}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-O\-W\-E\-R@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-O\-W\-E\-R}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a2ca27c14a62f7b7ccb00efeb0103cfcd}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-O\-W\-E\-R}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a2ca27c14a62f7b7ccb00efeb0103cfcd}
+}]\-Power. \index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-A\-G\-S\-U\-M@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-A\-G\-S\-U\-M}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-A\-G\-S\-U\-M@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-A\-G\-S\-U\-M}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103aa867c87857874ce9a52ee285670df615}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-A\-G\-S\-U\-M}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103aa867c87857874ce9a52ee285670df615}
+}]\-Sum of magnitudes. \index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-C\-O\-M\-P\-L\-E\-X@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-C\-O\-M\-P\-L\-E\-X}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-C\-O\-M\-P\-L\-E\-X@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-C\-O\-M\-P\-L\-E\-X}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a6c3ed813e3715f9603517c1ac0f2d24f}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-C\-O\-M\-P\-L\-E\-X}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a6c3ed813e3715f9603517c1ac0f2d24f}
+}]\-Complex-\/domain deviation. \index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-R\-C\-O\-M\-P\-L\-E\-X@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-R\-C\-O\-M\-P\-L\-E\-X}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-R\-C\-O\-M\-P\-L\-E\-X@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-R\-C\-O\-M\-P\-L\-E\-X}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a530686b979ca46c043d82079784be8a0}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-R\-C\-O\-M\-P\-L\-E\-X}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a530686b979ca46c043d82079784be8a0}
+}]\-Complex-\/domain deviation, rectified (only increases counted) \index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-H\-A\-S\-E@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-H\-A\-S\-E}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-H\-A\-S\-E@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-H\-A\-S\-E}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a739f239951a7899b5ad2b08fe705c1f8}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-P\-H\-A\-S\-E}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103a739f239951a7899b5ad2b08fe705c1f8}
+}]\-Phase deviation. \index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-W\-P\-H\-A\-S\-E@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-W\-P\-H\-A\-S\-E}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-W\-P\-H\-A\-S\-E@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-W\-P\-H\-A\-S\-E}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ade8e93ad33b75d6f9e92414d3f521cee}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-W\-P\-H\-A\-S\-E}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ade8e93ad33b75d6f9e92414d3f521cee}
+}]\-Weighted phase deviation. \index{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L@{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L}}\item[{\em 
+\hypertarget{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ad6e3eef08abfa4438b15c7e4844101a4}{\-O\-D\-S\-\_\-\-O\-D\-F\-\_\-\-M\-K\-L}\label{onsetsds_8h_a09065a442711dbed773c9cfdd7140103ad6e3eef08abfa4438b15c7e4844101a4}
+}]\-Modified \-Kullback-\/\-Liebler deviation. \end{description}
+\end{Desc}
+
+\hypertarget{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5e}{\index{onsetsds.\-h@{onsetsds.\-h}!onsetsds\-\_\-wh\-\_\-types@{onsetsds\-\_\-wh\-\_\-types}}
+\index{onsetsds\-\_\-wh\-\_\-types@{onsetsds\-\_\-wh\-\_\-types}!onsetsds.h@{onsetsds.\-h}}
+\subsubsection[{onsetsds\-\_\-wh\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf onsetsds\-\_\-wh\-\_\-types}}}\label{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5e}
+\-Types of whitening -\/ may not all be implemented yet. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-N\-E@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-N\-E}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-N\-E@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5ea896afc9adb942090ebde87c9de431d3a}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-N\-E}\label{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5ea896afc9adb942090ebde87c9de431d3a}
+}]\-No whitening -\/ \hyperlink{group__OtherFuncs_ga7083e5dd6cb7cd9f6159d2e05b1ea9f4}{onsetsds\-\_\-whiten()} becomes a no-\/op. \index{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-A\-D\-A\-P\-T\-\_\-\-M\-A\-X1@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-A\-D\-A\-P\-T\-\_\-\-M\-A\-X1}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-W\-H\-\_\-\-A\-D\-A\-P\-T\-\_\-\-M\-A\-X1@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-A\-D\-A\-P\-T\-\_\-\-M\-A\-X1}}\item[{\em 
+\hypertarget{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5eab5fe55098c92fa8c7857b1bcbd66eb41}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-A\-D\-A\-P\-T\-\_\-\-M\-A\-X1}\label{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5eab5fe55098c92fa8c7857b1bcbd66eb41}
+}]\-Adaptive whitening -\/ tracks recent-\/peak-\/magnitude in each bin, normalises that to 1. \index{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-A\-X@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-A\-X}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-A\-X@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-A\-X}}\item[{\em 
+\hypertarget{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5eafc23eff1ef833526e92403e4c134d4a0}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-A\-X}\label{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5eafc23eff1ef833526e92403e4c134d4a0}
+}]\-Simple normalisation -\/ each frame is normalised (independent of others) so largest magnitude becomes 1. \-Not implemented. \index{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-E\-A\-N@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-E\-A\-N}!onsetsds.\-h@{onsetsds.\-h}}\index{onsetsds.\-h@{onsetsds.\-h}!\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-E\-A\-N@{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-E\-A\-N}}\item[{\em 
+\hypertarget{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5ea0879580cb22f8f4ace5f60dd7fabafa1}{\-O\-D\-S\-\_\-\-W\-H\-\_\-\-N\-O\-R\-M\-M\-E\-A\-N}\label{onsetsds_8h_a0182d79ce07ff3441deb537e20ed2f5ea0879580cb22f8f4ace5f60dd7fabafa1}
+}]\-Simple normalisation -\/ each frame is normalised (independent of others) so mean magnitude becomes 1. \-Not implemented. \end{description}
+\end{Desc}
+

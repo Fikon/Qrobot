@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libonset.a  CMakeFiles/onset.dir/onsetsds.c.o
+/usr/bin/ranlib ../../lib/libonset.a

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/szy/文档/CMake_Project/src/onsets/onsetsds.c
+../include/onsetsds.h
+/home/szy/文档/CMake_Project/src/onsets/../include/onsetsds.h
+
+include/../include/onsetsds.h
+stdio.h
+-
+string.h
+-
+stdbool.h
+-
+math.h
+-
+

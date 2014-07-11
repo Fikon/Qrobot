@@ -1,0 +1,108 @@
+\hypertarget{msp__cmn_8h}{\section{msp\-\_\-cmn.\-h \-File \-Reference}
+\label{msp__cmn_8h}\index{msp\-\_\-cmn.\-h@{msp\-\_\-cmn.\-h}}
+}
+
+
+\-Mobile \-Speech \-Platform \-Common \-Interface \-Header \-File.  
+
+
+{\ttfamily \#include \char`\"{}msp\-\_\-types.\-h\char`\"{}}\*
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{msp__cmn_8h_a40bd797b09afc7cac75c8e718ac61078}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Login} )(const char $\ast$usr, const char $\ast$pwd, const char $\ast$params)}\label{msp__cmn_8h_a40bd797b09afc7cac75c8e718ac61078}
+
+\item 
+\hypertarget{msp__cmn_8h_a8d4d1993ecd22a57c49db766808ee40a}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Logout} )()}\label{msp__cmn_8h_a8d4d1993ecd22a57c49db766808ee40a}
+
+\item 
+\hypertarget{msp__cmn_8h_aad4eaf89d8a80541b2b0edf5c1994735}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Set\-Param} )(const char $\ast$param\-Name, const char $\ast$param\-Value)}\label{msp__cmn_8h_aad4eaf89d8a80541b2b0edf5c1994735}
+
+\item 
+\hypertarget{msp__cmn_8h_a26d1708119ac68111f30c38a882cf8ad}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Get\-Param} )(const char $\ast$param\-Name, char $\ast$param\-Value, unsigned int $\ast$value\-Len)}\label{msp__cmn_8h_a26d1708119ac68111f30c38a882cf8ad}
+
+\item 
+\hypertarget{msp__cmn_8h_a0c2975c553bffb7d226754f4a3076499}{typedef const char $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Upload\-Data} )(const char $\ast$data\-Name, void $\ast$data, unsigned int data\-Len, const char $\ast$params, int $\ast$error\-Code)}\label{msp__cmn_8h_a0c2975c553bffb7d226754f4a3076499}
+
+\item 
+\hypertarget{msp__cmn_8h_ad38f95be937e5dd1dc45b3bf2cbd7946}{typedef const void $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Download\-Data} )(const char $\ast$params, unsigned int $\ast$data\-Len, int $\ast$error\-Code)}\label{msp__cmn_8h_ad38f95be937e5dd1dc45b3bf2cbd7946}
+
+\item 
+\hypertarget{msp__cmn_8h_ab2622714019b2dc3c43cbabef6d34910}{typedef const char $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Search} )(const char $\ast$params, const char $\ast$text, unsigned int $\ast$data\-Len, int $\ast$error\-Code)}\label{msp__cmn_8h_ab2622714019b2dc3c43cbabef6d34910}
+
+\item 
+\hypertarget{msp__cmn_8h_a9a36b8d20978aa37a22ce5f3b73af6e7}{typedef void($\ast$ {\bfseries msp\-\_\-status\-\_\-ntf\-\_\-handler} )(int type, int status, int param1, const void $\ast$param2, void $\ast$user\-Data)}\label{msp__cmn_8h_a9a36b8d20978aa37a22ce5f3b73af6e7}
+
+\item 
+\hypertarget{msp__cmn_8h_a133a7fe779c5dbe23514342a8efa3a98}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-M\-S\-P\-Register\-Notify} )(msp\-\_\-status\-\_\-ntf\-\_\-handler status\-Cb, void $\ast$user\-Data)}\label{msp__cmn_8h_a133a7fe779c5dbe23514342a8efa3a98}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{msp__cmn_8h_a137acfe684fe46cbe5baf19f7d4a7fcc}{int \-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Login} (const char $\ast$usr, const char $\ast$pwd, const char $\ast$params)}\label{msp__cmn_8h_a137acfe684fe46cbe5baf19f7d4a7fcc}
+
+\item 
+int \-M\-S\-P\-A\-P\-I \hyperlink{msp__cmn_8h_ad679d9ea402159e6c9d6ec29851d5a8e}{\-M\-S\-P\-Logout} ()
+\begin{DoxyCompactList}\small\item\em user logout interface \end{DoxyCompactList}\item 
+\hypertarget{msp__cmn_8h_adda40e907aa1a1fb781efe986556e751}{int \-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Set\-Param} (const char $\ast$param\-Name, const char $\ast$param\-Value)}\label{msp__cmn_8h_adda40e907aa1a1fb781efe986556e751}
+
+\item 
+\hypertarget{msp__cmn_8h_a4d3fa0aad5e761cb2a2afe30ae2a9714}{int \-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Get\-Param} (const char $\ast$param\-Name, char $\ast$param\-Value, unsigned int $\ast$value\-Len)}\label{msp__cmn_8h_a4d3fa0aad5e761cb2a2afe30ae2a9714}
+
+\item 
+\hypertarget{msp__cmn_8h_ada276fa6db4a66342d951820020e4e8f}{const char $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Upload\-Data} (const char $\ast$data\-Name, void $\ast$data, unsigned int data\-Len, const char $\ast$params, int $\ast$error\-Code)}\label{msp__cmn_8h_ada276fa6db4a66342d951820020e4e8f}
+
+\item 
+\hypertarget{msp__cmn_8h_a8142db32f429c1e6b8b5b490402349ab}{const void $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Download\-Data} (const char $\ast$params, unsigned int $\ast$data\-Len, int $\ast$error\-Code)}\label{msp__cmn_8h_a8142db32f429c1e6b8b5b490402349ab}
+
+\item 
+\hypertarget{msp__cmn_8h_ae7be2dd2c6ee318524621b952998c14d}{const char $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Search} (const char $\ast$params, const char $\ast$text, unsigned int $\ast$data\-Len, int $\ast$error\-Code)}\label{msp__cmn_8h_ae7be2dd2c6ee318524621b952998c14d}
+
+\item 
+\hypertarget{msp__cmn_8h_a977c785d820483ee20c403b9214b94c9}{int \-M\-S\-P\-A\-P\-I {\bfseries \-M\-S\-P\-Register\-Notify} (msp\-\_\-status\-\_\-ntf\-\_\-handler status\-Cb, void $\ast$user\-Data)}\label{msp__cmn_8h_a977c785d820483ee20c403b9214b94c9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Mobile \-Speech \-Platform \-Common \-Interface \-Header \-File. \-This file contains the quick common programming interface (\-A\-P\-I) declarations of \-M\-S\-P. \-Developer can include this file in your project to build applications. \-For more information, please read the developer guide.
+
+\-Use of this software is subject to certain restrictions and limitations set forth in a license agreement entered into between i\-F\-L\-Y\-T\-E\-K, \-Co,\-L\-T\-D. and the licensee of this software. \-Please refer to the license agreement for license use rights and restrictions.
+
+\-Copyright (\-C) 1999 -\/ 2012 by \-A\-N\-H\-U\-I \-U\-S\-T\-C i\-F\-L\-Y\-T\-E\-K, \-Co,\-L\-T\-D. \-All rights reserved.
+
+\begin{DoxyAuthor}{\-Author}
+\-Speech \-Dept. i\-F\-L\-Y\-T\-E\-K. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+2012/09/01
+\end{DoxyDate}
+\begin{DoxySeeAlso}{\-See also}
+
+\end{DoxySeeAlso}
+\-History\-: index version date author notes 0 1.\-0 2012/09/01 \-M\-S\-C40 \-Create this file 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{msp__cmn_8h_ad679d9ea402159e6c9d6ec29851d5a8e}{\index{msp\-\_\-cmn.\-h@{msp\-\_\-cmn.\-h}!\-M\-S\-P\-Logout@{\-M\-S\-P\-Logout}}
+\index{\-M\-S\-P\-Logout@{\-M\-S\-P\-Logout}!msp_cmn.h@{msp\-\_\-cmn.\-h}}
+\subsubsection[{\-M\-S\-P\-Logout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-M\-S\-P\-Logout} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{msp__cmn_8h_ad679d9ea402159e6c9d6ec29851d5a8e}
+
+
+user logout interface 
+
+\-User logout
+
+\begin{DoxyReturn}{\-Returns}
+int \-M\-S\-P\-A\-P\-I -\/ \-Return 0 in success, otherwise return error code. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+
+\end{DoxySeeAlso}

@@ -1,0 +1,120 @@
+\hypertarget{classMusicPlayer}{\section{\-Music\-Player \-Class \-Reference}
+\label{classMusicPlayer}\index{\-Music\-Player@{\-Music\-Player}}
+}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries buffer}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMusicPlayer_a157211d92ff78fe87fdef2bb77a2b5fa}{\hyperlink{classMusicPlayer_a157211d92ff78fe87fdef2bb77a2b5fa}{\-Music\-Player} ()}\label{classMusicPlayer_a157211d92ff78fe87fdef2bb77a2b5fa}
+
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicPlayer_a3bc16c3be2206fabd90ce8ad3551d736}{\hyperlink{classMusicPlayer_a3bc16c3be2206fabd90ce8ad3551d736}{$\sim$\-Music\-Player} ()}\label{classMusicPlayer_a3bc16c3be2206fabd90ce8ad3551d736}
+
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+int \hyperlink{classMusicPlayer_a1428fc3f16799945f3eb282ffcdd25d6}{play\-Music} (char $\ast$music\-Name, char $\ast$divice\-Name, int sample\-Rate, int channels)
+\begin{DoxyCompactList}\small\item\em 音乐播放函数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicPlayer_a1191002582638b11aa802a24efb0aaa6}{void \hyperlink{classMusicPlayer_a1191002582638b11aa802a24efb0aaa6}{pcm\-Buffer\-Init} (int samples)}\label{classMusicPlayer_a1191002582638b11aa802a24efb0aaa6}
+
+\begin{DoxyCompactList}\small\item\em pcm缓冲区初始化 \end{DoxyCompactList}\item 
+\hypertarget{classMusicPlayer_a3951627666f0d8951967f56657b2e0a9}{short $\ast$ \hyperlink{classMusicPlayer_a3951627666f0d8951967f56657b2e0a9}{get\-Pcm\-Buffer} ()}\label{classMusicPlayer_a3951627666f0d8951967f56657b2e0a9}
+
+\begin{DoxyCompactList}\small\item\em 获取pcm缓冲区指针 \end{DoxyCompactList}\item 
+bool \hyperlink{classMusicPlayer_a8a878315c3e4863dff337015f44e0b21}{get\-Is\-Pcm\-Buffer\-Full} ()
+\begin{DoxyCompactList}\small\item\em 获取pcm缓冲区是否已满信息 \end{DoxyCompactList}\item 
+void \hyperlink{classMusicPlayer_ab3c179363fc7dc171b303ff0d6587518}{set\-Is\-Pcm\-Buffer\-Full} (bool is\-Full)
+\begin{DoxyCompactList}\small\item\em 变量is\-Pcm\-Buffer\-Full的set函数 \end{DoxyCompactList}\item 
+\hypertarget{classMusicPlayer_a3734d9a0ba934a769345938e20dc5443}{void {\bfseries set\-Is\-Play} (bool is\-Play)}\label{classMusicPlayer_a3734d9a0ba934a769345938e20dc5443}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMusicPlayer_a0b42fd5a2b7735c914b86f91b6b7b048}{static snd\-\_\-pcm\-\_\-t $\ast$ {\bfseries handle} = \-N\-U\-L\-L}\label{classMusicPlayer_a0b42fd5a2b7735c914b86f91b6b7b048}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classMusicPlayer_a8a878315c3e4863dff337015f44e0b21}{\index{\-Music\-Player@{\-Music\-Player}!get\-Is\-Pcm\-Buffer\-Full@{get\-Is\-Pcm\-Buffer\-Full}}
+\index{get\-Is\-Pcm\-Buffer\-Full@{get\-Is\-Pcm\-Buffer\-Full}!MusicPlayer@{\-Music\-Player}}
+\subsubsection[{get\-Is\-Pcm\-Buffer\-Full}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Music\-Player\-::get\-Is\-Pcm\-Buffer\-Full} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMusicPlayer_a8a878315c3e4863dff337015f44e0b21}
+
+
+获取pcm缓冲区是否已满信息 
+
+获取pcm缓冲区是否已满信息
+
+获取pcm缓冲区是否已满信息
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em false} & 未满 \\
+\hline
+{\em true} & 已满 \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classMusicPlayer_a1428fc3f16799945f3eb282ffcdd25d6}{\index{\-Music\-Player@{\-Music\-Player}!play\-Music@{play\-Music}}
+\index{play\-Music@{play\-Music}!MusicPlayer@{\-Music\-Player}}
+\subsubsection[{play\-Music}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Music\-Player\-::play\-Music} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{music\-Name, }
+\item[{char $\ast$}]{divice\-Name, }
+\item[{int}]{sample\-Rate, }
+\item[{int}]{channels}
+\end{DoxyParamCaption}
+)}}\label{classMusicPlayer_a1428fc3f16799945f3eb282ffcdd25d6}
+
+
+音乐播放函数 
+
+音乐播放函数
+
+选好参数，调用该函数播放音乐
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em music\-Name} & 音乐名及地址（如\char`\"{}./music/a.\-mp3\char`\"{}） \\
+\hline
+{\em divice\-Name} & 设备名（如\char`\"{}default\char`\"{}、\char`\"{}hw\-:2,0\char`\"{}）\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & 运行正确 \\
+\hline
+{\em 1} & 设备打开失败 \\
+\hline
+{\em 2} & fastat失败 \\
+\hline
+{\em 3} & 音乐停止 \\
+\hline
+{\em 4} & pcm数据设置失败 \\
+\hline
+{\em 5} & munmap为-\/1 \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classMusicPlayer_ab3c179363fc7dc171b303ff0d6587518}{\index{\-Music\-Player@{\-Music\-Player}!set\-Is\-Pcm\-Buffer\-Full@{set\-Is\-Pcm\-Buffer\-Full}}
+\index{set\-Is\-Pcm\-Buffer\-Full@{set\-Is\-Pcm\-Buffer\-Full}!MusicPlayer@{\-Music\-Player}}
+\subsubsection[{set\-Is\-Pcm\-Buffer\-Full}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Music\-Player\-::set\-Is\-Pcm\-Buffer\-Full} (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Full}
+\end{DoxyParamCaption}
+)}}\label{classMusicPlayer_ab3c179363fc7dc171b303ff0d6587518}
+
+
+变量is\-Pcm\-Buffer\-Full的set函数 
+
+只是在调用get\-Is\-Pcm\-Buffer\-Full 
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Music\-Player.\-h\item 
+\-Music\-Player.\-cpp\end{DoxyCompactItemize}

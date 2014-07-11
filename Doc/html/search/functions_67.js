@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['getapikey',['getApiKey',['../classAudio2Text.html#a9b6ea96fb317eca4e1f7d4175ae48ec1',1,'Audio2Text']]],
+  ['getaudio',['getAudio',['../classText2Audio.html#ada2764497ba406ff07d4e1fa9f32a4c9',1,'Text2Audio']]],
+  ['getbuffer',['getBuffer',['../classAudioController.html#a858c0b9cebc797b0a9e5aa518deaa0c1',1,'AudioController']]],
+  ['getconfigs',['getConfigs',['../classAudio2Text.html#a9792db820d5adc409bd13e8aa56b979d',1,'Audio2Text']]],
+  ['getcuid',['getCuid',['../classAudio2Text.html#a0b6835dea0cdfadd937fdd55f585712e',1,'Audio2Text']]],
+  ['getdevice',['getDevice',['../classPeopleDetection.html#ab44c56d44de57d5dad49b87a8ef66408',1,'PeopleDetection']]],
+  ['getemotion',['getEmotion',['../classPeopleDetection.html#ab63ed1c4186d84397bc9e70bb6a35440',1,'PeopleDetection']]],
+  ['getframes',['getFrames',['../classAudioController.html#a945f2b786d90a1847159119385b75db2',1,'AudioController']]],
+  ['getheadhorizontal',['getHeadHorizontal',['../classQRobotController.html#a7c42b64f401e74902cd207f6241d31bf',1,'QRobotController']]],
+  ['getheadvertical',['getHeadVertical',['../classQRobotController.html#ad0d015342ff8552c99a24fbf32734f7a',1,'QRobotController']]],
+  ['getispcmbufferfull',['getIsPcmBufferFull',['../classMusicPlayer.html#a8a878315c3e4863dff337015f44e0b21',1,'MusicPlayer']]],
+  ['getparam',['getParam',['../classAudio2Text.html#afac8cda0bc0d8730700eddf42c270d2b',1,'Audio2Text']]],
+  ['getpcmbuffer',['getPcmBuffer',['../classMusicPlayer.html#a3951627666f0d8951967f56657b2e0a9',1,'MusicPlayer']]],
+  ['getrate',['getRate',['../classAudioController.html#a918f4175143c6a44ed7c7cf6c3b41011',1,'AudioController']]],
+  ['getsecretkey',['getSecretKey',['../classAudio2Text.html#a2dcd3865a05a056df483f35bcc8d590f',1,'Audio2Text']]],
+  ['gettext',['getText',['../classAudio2Text.html#a6111b4b2b34ed3298e80011c721c4583',1,'Audio2Text']]],
+  ['gettextfrombd',['getTextFromBD',['../classAudio2Text.html#a009529cf062579d5edbfe5c215b36118',1,'Audio2Text']]],
+  ['gettoken',['getToken',['../classAudio2Text.html#a1e3fe0426127bb83f7f4bfb17a3b6adc',1,'Audio2Text']]],
+  ['gettouchinfo',['getTouchInfo',['../classQRobotController.html#ae92feceef6802284f5b6ba41cc43563a',1,'QRobotController']]]
+];

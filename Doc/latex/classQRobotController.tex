@@ -1,0 +1,404 @@
+\hypertarget{classQRobotController}{\section{\-Q\-Robot\-Controller \-Class \-Reference}
+\label{classQRobotController}\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}}
+}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classQRobotController_ad97e06a8e50a161fd1d517cd8d5c0b28}{reset} ()
+\begin{DoxyCompactList}\small\item\em 重置机器人的动作 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a82fc8edefafcd6b7a61abf9999f7000e}{left\-Wing\-Up} (int speed, int time)
+\begin{DoxyCompactList}\small\item\em 控制左边翅膀的运动,方向向上 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a3dfb9605e6c136ce9048f117ef36574c}{left\-Wing\-Org} (int speed)
+\begin{DoxyCompactList}\small\item\em 控制左边翅膀回到原点 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a21577c882cd6999f54bac238141aa9c1}{left\-Wing\-Down} (int speed, int time)
+\begin{DoxyCompactList}\small\item\em 控制左边翅膀运动，方向向下 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_ab9975cee1d87bc7fd03604b5b4e5c4be}{right\-Wing\-Up} (int speed, int time)
+\begin{DoxyCompactList}\small\item\em 控制右边边翅膀的运动,方向向上 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a1afc24cae5b6782e8cffb0074b868cd4}{right\-Wing\-Org} (int speed)
+\begin{DoxyCompactList}\small\item\em 控制右边翅膀回到原点 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a3dbffb4285c5997671252f667f53b4c9}{right\-Wing\-Down} (int speed, int time)
+\begin{DoxyCompactList}\small\item\em 控制右边翅膀运动，方向向下 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_ad5e7a8fa2198414ac062d595df67586c}{lr\-Wing\-Down} (int speed, int time)
+\begin{DoxyCompactList}\small\item\em 控制左右边翅膀运动，方向向下 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a09e6972e4f9c8869b808e8ca6a20b977}{horizontal\-Head} (int speed, int range)
+\begin{DoxyCompactList}\small\item\em 控制头部水平运动 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a9b9522a4e86a388b37971126ea618623}{horizontal\-Head\-Org} (int speed)
+\begin{DoxyCompactList}\small\item\em 控制头部水平运动回到原点 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_acc6ddd9cc70deeda6691b81cf0c23078}{vertical\-Head} (int speed, int range)
+\begin{DoxyCompactList}\small\item\em 控制头部垂直运动 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a8f3098e2e75d7fdec7dec06f23171859}{vertical\-Head\-Org} (int speed)
+\begin{DoxyCompactList}\small\item\em 控制头部垂直运动回到原点 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_a4ecc1e113f493138fcf54a374f9634cf}{set\-Heart\-Color} (int red, int green, int blue)
+\begin{DoxyCompactList}\small\item\em 设置胸部显示颜色 \end{DoxyCompactList}\item 
+bool \hyperlink{classQRobotController_aba1f6f7efc851b97634004f2a8ec634b}{set\-Eye\-Pic} (int time, int face)
+\begin{DoxyCompactList}\small\item\em 设置眼睛表情 \end{DoxyCompactList}\item 
+void \hyperlink{classQRobotController_abefa7bd9d04a9ab19471f6e91a44499b}{set\-Power\-State} (bool state)
+\begin{DoxyCompactList}\small\item\em 设置机器人电源状态 \end{DoxyCompactList}\item 
+int \hyperlink{classQRobotController_ad0d015342ff8552c99a24fbf32734f7a}{get\-Head\-Vertical} ()
+\begin{DoxyCompactList}\small\item\em 读取机器人的头部角度信息(上下) \end{DoxyCompactList}\item 
+int \hyperlink{classQRobotController_a7c42b64f401e74902cd207f6241d31bf}{get\-Head\-Horizontal} ()
+\begin{DoxyCompactList}\small\item\em 读取机器人头部角度信息（左右） \end{DoxyCompactList}\item 
+int \hyperlink{classQRobotController_ae92feceef6802284f5b6ba41cc43563a}{get\-Touch\-Info} ()
+\begin{DoxyCompactList}\small\item\em 获取机器人的触摸信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQRobotController_a191157dae5e55d42e29a10f3ad0bafed}{static \hyperlink{classQRobotController}{\-Q\-Robot\-Controller} $\ast$ {\bfseries get\-Instance} ()}\label{classQRobotController_a191157dae5e55d42e29a10f3ad0bafed}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classQRobotController_a7c42b64f401e74902cd207f6241d31bf}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!get\-Head\-Horizontal@{get\-Head\-Horizontal}}
+\index{get\-Head\-Horizontal@{get\-Head\-Horizontal}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{get\-Head\-Horizontal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Q\-Robot\-Controller\-::get\-Head\-Horizontal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a7c42b64f401e74902cd207f6241d31bf}
+
+
+读取机器人头部角度信息（左右） 
+
+get the head's horizontal information!!$\sim$
+
+\begin{DoxyReturn}{\-Returns}
+机器人的左右角度 
+\end{DoxyReturn}
+\hypertarget{classQRobotController_ad0d015342ff8552c99a24fbf32734f7a}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!get\-Head\-Vertical@{get\-Head\-Vertical}}
+\index{get\-Head\-Vertical@{get\-Head\-Vertical}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{get\-Head\-Vertical}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Q\-Robot\-Controller\-::get\-Head\-Vertical} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_ad0d015342ff8552c99a24fbf32734f7a}
+
+
+读取机器人的头部角度信息(上下) 
+
+get the head's vertical information!!$\sim$
+
+\begin{DoxyReturn}{\-Returns}
+机器人的上下角度 
+\end{DoxyReturn}
+\hypertarget{classQRobotController_ae92feceef6802284f5b6ba41cc43563a}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!get\-Touch\-Info@{get\-Touch\-Info}}
+\index{get\-Touch\-Info@{get\-Touch\-Info}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{get\-Touch\-Info}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Q\-Robot\-Controller\-::get\-Touch\-Info} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_ae92feceef6802284f5b6ba41cc43563a}
+
+
+获取机器人的触摸信息 
+
+get the touch-\/information!!$\sim$
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0x01} & 头部按下 \\
+\hline
+{\em 0x02} & 头部按下松开 \\
+\hline
+{\em 0x12} & 头部长按 \\
+\hline
+{\em 0x04} & 嘴巴按下 \\
+\hline
+{\em 0x08} & 嘴巴按下松开 \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classQRobotController_a09e6972e4f9c8869b808e8ca6a20b977}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!horizontal\-Head@{horizontal\-Head}}
+\index{horizontal\-Head@{horizontal\-Head}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{horizontal\-Head}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::horizontal\-Head} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{range}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a09e6972e4f9c8869b808e8ca6a20b977}
+
+
+控制头部水平运动 
+
+make the head move horizontally!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+{\em range} & 运动角度（0$\sim$100）相对于原点 \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_a9b9522a4e86a388b37971126ea618623}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!horizontal\-Head\-Org@{horizontal\-Head\-Org}}
+\index{horizontal\-Head\-Org@{horizontal\-Head\-Org}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{horizontal\-Head\-Org}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::horizontal\-Head\-Org} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a9b9522a4e86a388b37971126ea618623}
+
+
+控制头部水平运动回到原点 
+
+make the head reset horizontally!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQRobotController_a21577c882cd6999f54bac238141aa9c1}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!left\-Wing\-Down@{left\-Wing\-Down}}
+\index{left\-Wing\-Down@{left\-Wing\-Down}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{left\-Wing\-Down}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::left\-Wing\-Down} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a21577c882cd6999f54bac238141aa9c1}
+
+
+控制左边翅膀运动，方向向下 
+
+make the left wing down!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+{\em time} & 运动时间（0-\/100）单位为20ms \\
+\hline
+\end{DoxyParams}
+两个临时变量用于将十进制数据转化为十六进制 \hypertarget{classQRobotController_a3dfb9605e6c136ce9048f117ef36574c}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!left\-Wing\-Org@{left\-Wing\-Org}}
+\index{left\-Wing\-Org@{left\-Wing\-Org}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{left\-Wing\-Org}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::left\-Wing\-Org} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a3dfb9605e6c136ce9048f117ef36574c}
+
+
+控制左边翅膀回到原点 
+
+make the left wing reset!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQRobotController_a82fc8edefafcd6b7a61abf9999f7000e}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!left\-Wing\-Up@{left\-Wing\-Up}}
+\index{left\-Wing\-Up@{left\-Wing\-Up}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{left\-Wing\-Up}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::left\-Wing\-Up} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a82fc8edefafcd6b7a61abf9999f7000e}
+
+
+控制左边翅膀的运动,方向向上 
+
+make the left wing up move!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1.2.\-3） \\
+\hline
+{\em time} & 运动时间(0-\/100) 单位20ms \\
+\hline
+\end{DoxyParams}
+两个临时变量，用于将输入的十进制转化为十六进制数据 \hypertarget{classQRobotController_ad5e7a8fa2198414ac062d595df67586c}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!lr\-Wing\-Down@{lr\-Wing\-Down}}
+\index{lr\-Wing\-Down@{lr\-Wing\-Down}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{lr\-Wing\-Down}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::lr\-Wing\-Down} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_ad5e7a8fa2198414ac062d595df67586c}
+
+
+控制左右边翅膀运动，方向向下 
+
+make the left and right both wing down move!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+{\em time} & 运动时间（0-\/100）单位为20ms \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_ad97e06a8e50a161fd1d517cd8d5c0b28}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!reset@{reset}}
+\index{reset@{reset}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::reset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_ad97e06a8e50a161fd1d517cd8d5c0b28}
+
+
+重置机器人的动作 
+
+reset the robot$\sim$ \hypertarget{classQRobotController_a3dbffb4285c5997671252f667f53b4c9}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!right\-Wing\-Down@{right\-Wing\-Down}}
+\index{right\-Wing\-Down@{right\-Wing\-Down}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{right\-Wing\-Down}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::right\-Wing\-Down} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a3dbffb4285c5997671252f667f53b4c9}
+
+
+控制右边翅膀运动，方向向下 
+
+make the right wing down move!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+{\em time} & 运动时间（0-\/100）单位为20ms \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_a1afc24cae5b6782e8cffb0074b868cd4}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!right\-Wing\-Org@{right\-Wing\-Org}}
+\index{right\-Wing\-Org@{right\-Wing\-Org}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{right\-Wing\-Org}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::right\-Wing\-Org} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a1afc24cae5b6782e8cffb0074b868cd4}
+
+
+控制右边翅膀回到原点 
+
+make the right wing reset!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_ab9975cee1d87bc7fd03604b5b4e5c4be}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!right\-Wing\-Up@{right\-Wing\-Up}}
+\index{right\-Wing\-Up@{right\-Wing\-Up}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{right\-Wing\-Up}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::right\-Wing\-Up} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_ab9975cee1d87bc7fd03604b5b4e5c4be}
+
+
+控制右边边翅膀的运动,方向向上 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1.2.\-3） \\
+\hline
+{\em time} & 运动时间(0-\/100) 单位20ms \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_aba1f6f7efc851b97634004f2a8ec634b}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!set\-Eye\-Pic@{set\-Eye\-Pic}}
+\index{set\-Eye\-Pic@{set\-Eye\-Pic}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{set\-Eye\-Pic}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::set\-Eye\-Pic} (
+\begin{DoxyParamCaption}
+\item[{int}]{time, }
+\item[{int}]{face}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_aba1f6f7efc851b97634004f2a8ec634b}
+
+
+设置眼睛表情 
+
+set the eye's the picture!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em time} & 表情循环的次数 \\
+\hline
+{\em face} & 表情的编号（1-\/255） \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_a4ecc1e113f493138fcf54a374f9634cf}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!set\-Heart\-Color@{set\-Heart\-Color}}
+\index{set\-Heart\-Color@{set\-Heart\-Color}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{set\-Heart\-Color}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::set\-Heart\-Color} (
+\begin{DoxyParamCaption}
+\item[{int}]{red, }
+\item[{int}]{green, }
+\item[{int}]{blue}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a4ecc1e113f493138fcf54a374f9634cf}
+
+
+设置胸部显示颜色 
+
+set the heart's color!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em red} & \-R\-G\-B值（0-\/255） \\
+\hline
+{\em green} & \-R\-G\-B值（0-\/255） \\
+\hline
+{\em blue} & \-R\-G\-B值（0-\/255） \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_abefa7bd9d04a9ab19471f6e91a44499b}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!set\-Power\-State@{set\-Power\-State}}
+\index{set\-Power\-State@{set\-Power\-State}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{set\-Power\-State}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Q\-Robot\-Controller\-::set\-Power\-State} (
+\begin{DoxyParamCaption}
+\item[{bool}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classQRobotController_abefa7bd9d04a9ab19471f6e91a44499b}
+
+
+设置机器人电源状态 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em state} & true/false \\
+\hline
+\end{DoxyParams}
+\hypertarget{classQRobotController_acc6ddd9cc70deeda6691b81cf0c23078}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!vertical\-Head@{vertical\-Head}}
+\index{vertical\-Head@{vertical\-Head}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{vertical\-Head}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::vertical\-Head} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed, }
+\item[{int}]{range}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_acc6ddd9cc70deeda6691b81cf0c23078}
+
+
+控制头部垂直运动 
+
+make the head move vertically!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+{\em range} & 运动角度（0$\sim$40）相对于原点 \\
+\hline
+\end{DoxyParams}
+临时变量 \hypertarget{classQRobotController_a8f3098e2e75d7fdec7dec06f23171859}{\index{\-Q\-Robot\-Controller@{\-Q\-Robot\-Controller}!vertical\-Head\-Org@{vertical\-Head\-Org}}
+\index{vertical\-Head\-Org@{vertical\-Head\-Org}!QRobotController@{\-Q\-Robot\-Controller}}
+\subsubsection[{vertical\-Head\-Org}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Q\-Robot\-Controller\-::vertical\-Head\-Org} (
+\begin{DoxyParamCaption}
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}}\label{classQRobotController_a8f3098e2e75d7fdec7dec06f23171859}
+
+
+控制头部垂直运动回到原点 
+
+make the head reset vertically!!$\sim$
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em speed} & 运动速度挡位（1，2，3） \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Q\-Robot\-Controller.\-h\item 
+\hyperlink{QRobotController_8cpp}{\-Q\-Robot\-Controller.\-cpp}\end{DoxyCompactItemize}

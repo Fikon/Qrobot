@@ -1,0 +1,79 @@
+\hypertarget{qisr_8h}{\section{qisr.\-h \-File \-Reference}
+\label{qisr_8h}\index{qisr.\-h@{qisr.\-h}}
+}
+
+
+i\-F\-L\-Y \-Speech \-Recognizer \-Header \-File  
+
+
+{\ttfamily \#include \char`\"{}msp\-\_\-types.\-h\char`\"{}}\*
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{qisr_8h_a6423019881cdd7b57b38a46822c9ae82}{typedef const char $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Session\-Begin} )(const char $\ast$grammar\-List, const char $\ast$params, int $\ast$result)}\label{qisr_8h_a6423019881cdd7b57b38a46822c9ae82}
+
+\item 
+\hypertarget{qisr_8h_a3800201910ee9b9041d8601197074f77}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Grammar\-Activate} )(const char $\ast$session\-I\-D, const char $\ast$grammar, const char $\ast$type, int weight)}\label{qisr_8h_a3800201910ee9b9041d8601197074f77}
+
+\item 
+\hypertarget{qisr_8h_ac19829e505151be5daa1e05136973281}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Audio\-Write} )(const char $\ast$session\-I\-D, const void $\ast$wave\-Data, unsigned int wave\-Len, int audio\-Status, int $\ast$ep\-Status, int $\ast$recog\-Status)}\label{qisr_8h_ac19829e505151be5daa1e05136973281}
+
+\item 
+\hypertarget{qisr_8h_a98c3725a2ad67514fdb2950dc66d765b}{typedef const char $\ast$(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Get\-Result} )(const char $\ast$session\-I\-D, int $\ast$rslt\-Status, int wait\-Time, int $\ast$error\-Code)}\label{qisr_8h_a98c3725a2ad67514fdb2950dc66d765b}
+
+\item 
+\hypertarget{qisr_8h_a69b030f0d78a153d163792772513e3ea}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Session\-End} )(const char $\ast$session\-I\-D, const char $\ast$hints)}\label{qisr_8h_a69b030f0d78a153d163792772513e3ea}
+
+\item 
+\hypertarget{qisr_8h_a76875fa13d0a3b244a949db99361ff66}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Get\-Param} )(const char $\ast$session\-I\-D, const char $\ast$param\-Name, char $\ast$param\-Value, unsigned int $\ast$value\-Len)}\label{qisr_8h_a76875fa13d0a3b244a949db99361ff66}
+
+\item 
+\hypertarget{qisr_8h_a125754ad363992897d956e0b3ba168b7}{typedef int(\-M\-S\-P\-A\-P\-I $\ast$ {\bfseries \-Proc\-\_\-\-Q\-I\-S\-R\-Set\-Param} )(const char $\ast$session\-I\-D, const char $\ast$param\-Name, const char $\ast$param\-Value)}\label{qisr_8h_a125754ad363992897d956e0b3ba168b7}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{qisr_8h_aaec4a5779275e07c4f7405ed8d739416}{const char $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Session\-Begin} (const char $\ast$grammar\-List, const char $\ast$params, int $\ast$error\-Code)}\label{qisr_8h_aaec4a5779275e07c4f7405ed8d739416}
+
+\item 
+\hypertarget{qisr_8h_a23eb2a8564a9887b8d48b6c81b98a27a}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Grammar\-Activate} (const char $\ast$session\-I\-D, const char $\ast$grammar, const char $\ast$type, int weight)}\label{qisr_8h_a23eb2a8564a9887b8d48b6c81b98a27a}
+
+\item 
+\hypertarget{qisr_8h_a47fd2588fe834fa2d51fef1961d7aef4}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Audio\-Write} (const char $\ast$session\-I\-D, const void $\ast$wave\-Data, unsigned int wave\-Len, int audio\-Status, int $\ast$ep\-Status, int $\ast$recog\-Status)}\label{qisr_8h_a47fd2588fe834fa2d51fef1961d7aef4}
+
+\item 
+\hypertarget{qisr_8h_a2e7880db4792266a4d1439238c0b2c1b}{const char $\ast$\-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Get\-Result} (const char $\ast$session\-I\-D, int $\ast$rslt\-Status, int wait\-Time, int $\ast$error\-Code)}\label{qisr_8h_a2e7880db4792266a4d1439238c0b2c1b}
+
+\item 
+\hypertarget{qisr_8h_ab50c4114e032100c4093ddd51329fecc}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Session\-End} (const char $\ast$session\-I\-D, const char $\ast$hints)}\label{qisr_8h_ab50c4114e032100c4093ddd51329fecc}
+
+\item 
+\hypertarget{qisr_8h_a2081e3cad9a8155c15790a2476be7044}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Get\-Param} (const char $\ast$session\-I\-D, const char $\ast$param\-Name, char $\ast$param\-Value, unsigned int $\ast$value\-Len)}\label{qisr_8h_a2081e3cad9a8155c15790a2476be7044}
+
+\item 
+\hypertarget{qisr_8h_a734e9b8b41ef40daa92704930d2f0b8e}{int \-M\-S\-P\-A\-P\-I {\bfseries \-Q\-I\-S\-R\-Set\-Param} (const char $\ast$session\-I\-D, const char $\ast$param\-Name, const char $\ast$param\-Value)}\label{qisr_8h_a734e9b8b41ef40daa92704930d2f0b8e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+i\-F\-L\-Y \-Speech \-Recognizer \-Header \-File \-This file contains the quick application programming interface (\-A\-P\-I) declarations of \-I\-S\-R. \-Developer can include this file in your project to build applications. \-For more information, please read the developer guide.
+
+\-Use of this software is subject to certain restrictions and limitations set forth in a license agreement entered into between i\-F\-L\-Y\-T\-E\-K, \-Co,\-L\-T\-D. and the licensee of this software. \-Please refer to the license agreement for license use rights and restrictions.
+
+\-Copyright (\-C) 1999 -\/ 2007 by \-A\-N\-H\-U\-I \-U\-S\-T\-C i\-F\-L\-Y\-T\-E\-K, \-Co,\-L\-T\-D. \-All rights reserved.
+
+\begin{DoxyAuthor}{\-Author}
+\-Speech \-Dept. i\-F\-L\-Y\-T\-E\-K. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+2008/12/12
+\end{DoxyDate}
+\begin{DoxySeeAlso}{\-See also}
+
+\end{DoxySeeAlso}
+\-History\-: index version date author notes 0 1.\-0 2008/12/12 \-Speech \-Create this file 

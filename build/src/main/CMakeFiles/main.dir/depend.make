@@ -85,8 +85,8 @@ src/main/CMakeFiles/main.dir/PeopleDetection.cpp.o: ../include/../include/json/v
 src/main/CMakeFiles/main.dir/PeopleDetection.cpp.o: ../include/../include/json/writer.h
 src/main/CMakeFiles/main.dir/PeopleDetection.cpp.o: ../src/main/PeopleDetection.cpp
 
-src/main/CMakeFiles/main.dir/QRobotAction.cpp.o: ../include/../include/../include/QRobotController.h
 src/main/CMakeFiles/main.dir/QRobotAction.cpp.o: ../include/../include/QRobotAction.h
+src/main/CMakeFiles/main.dir/QRobotAction.cpp.o: ../include/../include/QRobotController.h
 src/main/CMakeFiles/main.dir/QRobotAction.cpp.o: ../src/main/QRobotAction.cpp
 
 src/main/CMakeFiles/main.dir/QRobotController.cpp.o: ../include/../include/QRobotController.h
